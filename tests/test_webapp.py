@@ -46,9 +46,10 @@ const result = vm.runInContext({json.dumps(expression)}, context);
 process.stdout.write(JSON.stringify(result));
 """
     completed = subprocess.run(
-        ["node", "-e", harness],
+        ["node", "-"],
         check=True,
         capture_output=True,
+        input=harness,
         text=True,
     )
     return json.loads(completed.stdout)
