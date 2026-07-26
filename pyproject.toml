@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verifiable-deep-research"
+version = "0.1.0"
+description = "Verification-centric deep research agent harness"
+readme = "README.md"
+requires-python = ">=3.11"
+# These direct adapter pins are the versions covered by the checked-in
+# conformance evidence. They intentionally do not claim a fully locked
+# transitive Python environment; use a generated lock/constraints artifact
+# when byte-for-byte environment reproduction is required.
+dependencies = ["ag-ui-protocol==0.1.19"]
+
+[project.optional-dependencies]
+mcp = [
+  "mcp==1.28.1",
+  "sse-starlette==2.4.1",
+  "starlette==0.38.6; python_version < '3.14'",
+  "starlette==0.48.0; python_version >= '3.14'",
+]
+a2a = ["a2a-sdk[http-server]==1.1.1"]
+
+[project.scripts]
+deep-research = "deep_research.cli:main"
+deep-research-mcp = "deep_research.protocols.mcp_server:main"
+deep-research-a2a = "deep_research.protocols.a2a_gateway:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

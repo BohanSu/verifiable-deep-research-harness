@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "title": "Python Documentation: History and License",
+      "url": "https://docs.python.org/3/license.html",
+      "source_type": "official",
+      "text": "Python was created by Guido van Rossum. Python was first released in 1991. Its development began at CWI in the Netherlands."
+    },
+    {
+      "title": "Python language overview",
+      "url": "https://example.org/reference/python-history",
+      "source_type": "reference",
+      "text": "The Python programming language was created by Guido van Rossum. It was first released in 1991 and emphasizes readability."
+    },
+    {
+      "title": "Unrelated programming language history",
+      "url": "https://example.org/reference/other-language",
+      "source_type": "reference",
+      "text": "This page describes an unrelated programming language and contains no facts about Python."
+    }
+  ]
+}

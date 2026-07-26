@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe4">
+  <title>Fieldnote Research</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#researchForm">跳到研究问题</a>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">F/R</span>
+      <span>FIELDNOTE RESEARCH</span>
+    </a>
+    <div class="provider" id="providerBadge" aria-live="polite">
+      <span class="pulse"></span>
+      <span>读取配置中</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">VERIFICATION-CENTRIC DEEP RESEARCH</div>
+      <h1>从问题，到<br><em>可核验的结论。</em></h1>
+      <p class="hero-copy">让每一次检索留下证据，让每一条结论经得起回看。系统自动规划、搜索、构建证据账本，并在提交答案前验证引用。</p>
+      <form id="researchForm" class="research-form">
+        <label for="question">研究问题</label>
+        <div class="question-shell">
+          <textarea id="question" rows="3" placeholder="例如：BrowseComp 为什么能有效评测长程网页检索 Agent？" required></textarea>
+          <button type="submit" id="runButton">
+            <span>开始研究</span>
+            <span class="arrow">↗</span>
+          </button>
+        </div>
+        <div class="research-input-grid">
+          <fieldset class="model-selector profile-selector" id="modelSelector">
+            <legend>智能体模型编组</legend>
+            <div class="model-options profile-options" role="radiogroup" aria-describedby="modelSelectorStatus">
+              <label class="model-option team-option" data-profile-option="team">
+                <input type="radio" name="profile" value="team" checked>
+                <span><b>三模型协作</b><small data-profile-detail="team">GPT 感知与规划 · DeepSeek 检索与整理 · Qwen 独立核验</small><em>推荐</em></span>
+              </label>
+              <label class="model-option" data-profile-option="qwen">
+                <input type="radio" name="profile" value="qwen">
+                <span><b>仅 Qwen</b><small data-profile-detail="qwen">单模型对照</small></span>
+              </label>
+              <label class="model-option" data-profile-option="gpt">
+                <input type="radio" name="profile" value="gpt">
+                <span><b>仅 GPT</b><small data-profile-detail="gpt">单模型对照</small></span>
+              </label>
+              <label class="model-option" data-profile-option="deepseek">
+                <input type="radio" name="profile" value="deepseek">
+                <span><b>仅 DeepSeek</b><small data-profile-detail="deepseek">单模型对照</small></span>
+              </label>
+            </div>
+            <div class="profile-runtime" id="profileRuntime">
+              <header><span>ROLE ROUTING</span><strong id="profileRuntimeTitle">正在读取角色路由</strong><small id="profileCapabilityStatus">能力状态待加载</small></header>
+              <div class="role-route-list" id="roleRouteList" aria-live="polite"></div>
+              <p>完整性审查由本地固定规则完成：模型不能自行把自己的回答判为可交付。</p>
+            </div>
+            <p id="modelSelectorStatus" aria-live="polite">正在读取共享 API 的模型编组。</p>
+          </fieldset>
+
+          <section class="attachment-composer" aria-labelledby="attachmentHeading">
+            <header><div><span>RESEARCH INPUTS</span><strong id="attachmentHeading">多模态研究材料</strong></div><b id="attachmentBudget">0 / 6</b></header>
+            <label class="attachment-dropzone" id="attachmentDropzone" for="attachmentInput">
+              <input id="attachmentInput" type="file" multiple accept="image/png,image/jpeg,image/gif,image/webp,audio/wav,audio/mpeg,audio/ogg,audio/flac,audio/webm,audio/mp4,application/pdf,application/json,text/plain,text/csv,text/markdown,.md">
+              <span class="attachment-add" aria-hidden="true">＋</span>
+              <strong>添加图片、音频、PDF 或文本</strong>
+              <small>单个 8 MB · 最多 6 个 · 总计 24 MB</small>
+            </label>
+            <div id="attachmentList" class="attachment-list" aria-live="polite"><span class="attachment-empty">当前仅使用研究问题作为输入</span></div>
+            <p id="attachmentStatus" class="attachment-status" role="status" aria-live="polite">附件会在服务端重新校验 MIME、大小与 SHA-256。</p>
+          </section>
+        </div>
+        <div class="form-meta">
+          <label class="toggle"><input type="checkbox" id="offline"><span></span> 离线回放模式</label>
+          <span>过程自动保存，可断点恢复</span>
+        </div>
+      </form>
+      <section class="landing-manifest" aria-label="研究系统工作方式">
+        <header><div><span>AFTER YOU START</span><strong>输入感知后进入六角色证据检查流程</strong></div><p>真实模型调用、逐附件感知、任务交接、失败恢复与费用记录会在独立运行页逐项展示。</p></header>
+        <div class="manifest-ingress"><span>00</span><b>多模态感知</b><small>原始附件 → 带页码、区域或时间定位的观察</small><i>↓</i></div>
+        <div class="manifest-chain">
+          <article><span>01</span><b>规划</b><small>问题拆成可验收目标</small></article><i>→</i>
+          <article><span>02</span><b>侦察</b><small>寻找原始资料与反证</small></article><i>→</i>
+          <article><span>03</span><b>整理</b><small>抽取可逐字定位原文</small></article><i>→</i>
+          <article><span>04</span><b>审查</b><small>检查来源、缺口与冲突</small></article><i>→</i>
+          <article><span>05</span><b>撰写</b><small>只使用证据账本回答</small></article><i>→</i>
+          <article><span>06</span><b>核验</b><small>逐句重查声明与引用</small></article>
+        </div>
+        <footer><span><b>先检查再交付</b> 高分不能替代证据要求</span><span><b>过程留痕</b> 每次执行和交接均可查</span><span><b>安全恢复</b> 失败现场与费用风险可见</span></footer>
+      </section>
+      <div class="history-strip">
+        <div class="history-title"><span>RECENT FIELDNOTES</span><button type="button" id="refreshHistory" aria-label="重新读取最近运行记录">刷新</button></div>
+        <div id="runHistory" class="history-list" aria-live="polite" aria-busy="true"><span class="history-state loading">正在读取运行记录……</span></div>
+        <div id="historyStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><span>FIELDNOTE / 2026</span><span>Evidence before confidence.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

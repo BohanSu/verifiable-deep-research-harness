@@ -1,0 +1,26 @@
+{
+  "schema_version": "model-capability-verification/1.0",
+  "recorded_at": "2026-07-21T06:54:42.605835+00:00",
+  "gateway_base_url_sha256": "cb91f91e5e44acc99bf6a7115efb88b5b683c00ac457d05a8a63bf71cf0a6356",
+  "verifications": [
+    {
+      "model_choice": "gpt",
+      "model_id": "gpt-5.5",
+      "modality": "image",
+      "transport": "openai-compatible-chat-completions-image_url-data-uri",
+      "probe_sha256": "8fb20130285d02e77c0587a66f3f040da6673d02ce6a3d57371cf262ea3a383f",
+      "probe_assertion": "generated image nonce 7319 was recognized",
+      "observations": 1,
+      "all_observations_had_locator": true,
+      "result": "passed"
+    }
+  ],
+  "unverified_modalities": [
+    {
+      "model_choice": "gpt",
+      "model_id": "gpt-5.5",
+      "modality": "audio",
+      "reason": "No native input_audio probe has been authorized and completed."
+    }
+  ]
+}

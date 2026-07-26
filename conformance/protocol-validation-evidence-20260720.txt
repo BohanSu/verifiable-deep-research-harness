@@ -1,0 +1,49 @@
+Fieldnote protocol validation evidence
+Checked at: 2026-07-20 (Asia/Shanghai)
+Repository root: /Users/boannn/codes/mini-project
+Python: 3.13.9
+Node: v25.9.0
+npm: 11.12.1
+
+Runtime versions
+- a2a-sdk 1.1.1
+- mcp 1.28.1
+- ag-ui-protocol 0.1.19
+- @ag-ui/core 0.0.57 (conformance/agui/package-lock.json)
+- @ag-ui/client 0.0.57 (conformance/agui/package-lock.json)
+
+AG-UI finite adapter
+Command: npm test --prefix conformance/agui -- http://127.0.0.1:8772
+Result: passed
+Observed: success and interrupt first runs; resolved resume; cancelled interrupt;
+same-runId idempotent replay; durable-run reuse; client runId correlation;
+state/message snapshots; schema/order validation; malformed lifecycle and orphan
+message negative cases; duplicate external run ID rejection.
+Boundary: this validates the pinned HTTP/SSE finite adapter only. GET run stream
+remains custom; full AG-UI event/transport/state/tools/context semantics and
+formal certification are not claimed.
+
+MCP stdio adapter
+Command: PYTHONPATH=src python -m unittest tests.test_protocols.McpServerTest -v
+Result: passed (5 tests)
+Observed: official ClientSession initialize, protocolVersion 2025-11-25,
+tools/list, search, bounded cursor fetch, untrusted content, input limits and
+clean stdio lifecycle.
+Boundary: only search/fetch stdio is verified. Network SSRF protection belongs
+to the default web provider; replay/custom providers need their own declared
+security validator. The ResearchEngine calls providers directly.
+
+A2A gateway adapter
+Command: PYTHONPATH=src python -m unittest tests.test_protocols.A2AGatewayTest -v
+Result: passed (8 tests)
+Observed: official Agent Card, A2A 1.0 over JSON-RPC 2.0 SendMessage,
+GetTask/ListTasks persistence, owner/task namespace and request boundary checks,
+authentication and evidence-incomplete input-required outcome.
+Boundary: streaming and push notifications are disabled; gRPC, HTTP+JSON and
+same-Task input-required continuation are not implemented. input-required is an
+explicit capability gap, not a successful resume claim.
+
+Evidence contract
+This file is the hash-anchored test evidence for the protocol-validation
+receipts. A receipt is valid only when its SDK/protocol version, command,
+freshness window and SHA-256 match this file.

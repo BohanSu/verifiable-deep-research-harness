@@ -1,0 +1,45 @@
+{
+  "schema_version": "deep-research-model-pricing/1.0",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "models": {
+    "gpt-5.5": {
+      "text": {"input_usd_per_m": 5.0, "cached_input_usd_per_m": 0.5, "output_usd_per_m": 30.0},
+      "long_context": {"input_threshold_tokens": 272000, "input_usd_per_m": null, "cached_input_usd_per_m": null}
+    },
+    "gpt-5.4": {
+      "text": {"input_usd_per_m": 2.5, "cached_input_usd_per_m": 0.25, "output_usd_per_m": 15.0},
+      "long_context": {"input_threshold_tokens": 272000, "input_usd_per_m": null, "cached_input_usd_per_m": null}
+    },
+    "gpt-5.4-mini": {
+      "text": {"input_usd_per_m": 0.75, "cached_input_usd_per_m": 0.075, "output_usd_per_m": 4.5}
+    },
+    "gpt-5.4-nano": {
+      "text": {"input_usd_per_m": 0.2, "cached_input_usd_per_m": 0.02, "output_usd_per_m": 1.25}
+    },
+    "gpt-5.3-codex": {
+      "text": {"input_usd_per_m": 1.75, "cached_input_usd_per_m": 0.175, "output_usd_per_m": 14.0}
+    },
+    "gpt-5.2": {
+      "text": {"input_usd_per_m": 1.75, "cached_input_usd_per_m": 0.175, "output_usd_per_m": 14.0}
+    },
+    "gpt-5.2-chat": {
+      "text": {"input_usd_per_m": 1.75, "cached_input_usd_per_m": 0.175, "output_usd_per_m": 14.0}
+    },
+    "gpt-audio-1.5": {
+      "text": {"input_usd_per_m": 2.5, "output_usd_per_m": 10.0},
+      "audio": {"input_usd_per_m": 32.0, "output_usd_per_m": 64.0}
+    },
+    "gpt-realtime-1.5": {
+      "text": {"input_usd_per_m": 4.0, "cached_input_usd_per_m": 0.4, "output_usd_per_m": 16.0},
+      "audio": {"input_usd_per_m": 32.0, "cached_input_usd_per_m": 0.4, "output_usd_per_m": 64.0},
+      "image": {"input_usd_per_m": 5.0, "cached_input_usd_per_m": 0.5}
+    },
+    "qwen3.6-35b-a3b": {
+      "text": {"input_usd_per_m": 0.0, "cached_input_usd_per_m": 0.0, "output_usd_per_m": 0.0}
+    },
+    "deepseek-v4-flash": {
+      "text": {"input_usd_per_m": 0.0, "cached_input_usd_per_m": 0.0, "output_usd_per_m": 0.0}
+    }
+  }
+}

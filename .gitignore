@@ -1,0 +1,35 @@
+# Local credentials and operator overrides
+.env
+.env.*
+!.env.example
+
+# Runtime data can contain private source snapshots and API metadata
+.cache/
+runs/
+
+# Python build and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Reproducible JavaScript dependencies
+node_modules/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local presentation exports and organizer-provided source material
+/deliverables/*.pptx
+/算法架构-2026年第四届“通计划”夏令营营员手册.pdf

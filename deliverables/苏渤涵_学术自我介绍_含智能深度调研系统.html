@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苏渤涵 - Research Presentation</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Times New Roman", "SimSun", serif;
+  background: #e8e8e8;
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding: 20px 0;
+  font-size: 16px;
+}
+.slide {
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto 20px;
+  padding: 45px 65px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.slide-number {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 3px solid #2c3e50;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+h2 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 10px 0 7px 0;
+  letter-spacing: 0.2px;
+  text-wrap: balance;
+}
+p {
+  font-size: 0.98rem;
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+ul {
+  margin: 10px 0 10px 25px;
+  padding: 0;
+}
+li {
+  margin: 7px 0;
+  font-size: 0.94rem;
+  line-height: 1.54;
+  text-wrap: pretty;
+}
+.title-slide {
+  justify-content: center;
+  text-align: center;
+  border-top: 5px solid #2c3e50;
+}
+.author-name {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  line-height: 1.05;
+}
+.author-title {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+.author-info {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 2;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  flex: 1;
+  min-height: 0;
+}
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.info-box {
+  border-left: 3px solid #2c3e50;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+.info-table td {
+  padding: 7px 0;
+  font-size: 0.97rem;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+  text-wrap: pretty;
+}
+.info-table td:first-child {
+  font-weight: 600;
+  width: 118px;
+  color: #2c3e50;
+}
+.method-fig {
+  text-align: center;
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+}
+.method-fig img {
+  max-width: 100%;
+  max-height: 300px;
+}
+.caption {
+  font-size: 0.88rem;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+  text-wrap: pretty;
+}
+.highlight {
+  background: #f0f4f8;
+  border: 1px solid #d0d8e0;
+  padding: 14px 20px;
+  margin-top: 16px;
+  font-size: 0.98rem;
+  text-wrap: pretty;
+}
+.research-item {
+  margin-bottom: 14px;
+  padding-left: 13px;
+  border-left: 3px solid #2c3e50;
+}
+.research-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.publication-meta {
+  font-size: 0.84rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 6px;
+  text-wrap: pretty;
+}
+.interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+  margin-top: 18px;
+}
+.interest-card {
+  background: #fafbfc;
+  border: 1px solid #d8dde3;
+  border-top: 3px solid #2c3e50;
+  padding: 16px 18px;
+}
+.interest-card h2 {
+  margin-top: 0;
+}
+.interest-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 8px;
+  flex: 1;
+}
+.work-card {
+  border: 1px solid #d9dee3;
+  background: #fbfcfd;
+  padding: 12px 13px 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.work-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  background: #eef2f6;
+  border: 1px solid #d7dee6;
+  color: #2c3e50;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.work-card h2 {
+  margin-top: 0;
+  font-size: 0.96rem;
+  letter-spacing: 0.2px;
+  text-wrap: balance;
+}
+.work-card p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.work-card ul {
+  margin: 8px 0 0 18px;
+}
+.work-card li {
+  margin: 4px 0;
+  font-size: 0.84rem;
+  line-height: 1.46;
+}
+.work-footer {
+  margin-top: auto;
+  padding-top: 7px;
+  border-top: 1px solid #dfe4e9;
+  color: #4f5d6b;
+  font-size: 0.79rem;
+  line-height: 1.46;
+  text-wrap: pretty;
+}
+#slide-pearl .two-col,
+#slide-survey .two-col,
+#slide-skills .two-col {
+  gap: 22px;
+}
+#slide-pearl p,
+#slide-pearl li,
+#slide-survey p,
+#slide-survey li,
+#slide-survey td {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+#slide-pearl .method-fig img {
+  max-height: 255px;
+}
+#slide-ongoing .work-grid {
+  gap: 10px;
+}
+#slide-ongoing .work-card h2 {
+  font-size: 0.95rem;
+  line-height: 1.36;
+}
+#slide-ongoing .work-card p {
+  font-size: 0.86rem;
+  line-height: 1.43;
+}
+#slide-ongoing .work-footer {
+  padding-top: 5px;
+  font-size: 0.78rem;
+  line-height: 1.42;
+}
+#slide-skills h2 {
+  margin: 8px 0 5px 0;
+}
+#slide-skills .three-col li {
+  margin: 5px 0;
+}
+#slide-skills .two-col li {
+  margin: 3px 0;
+  line-height: 1.4;
+}
+#slide-skills .two-col ul {
+  margin-top: 4px;
+}
+.project-kicker {
+  color: #526f87;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+.project-lede { max-width: 980px; color: #44515b; font-size: 1.08rem; line-height: 1.7; }
+.project-flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 20px; }
+.project-flow-item { position: relative; min-height: 132px; border: 1px solid #cbd6df; border-top: 4px solid #46667f; padding: 12px; background: #fbfcfd; }
+.project-flow-item:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 50%; z-index: 2; width: 20px; color: #70879a; background: white; font-size: 1.1rem; text-align: center; transform: translateY(-50%); }
+.project-flow-item .flow-no { color: #71879a; font-size: 0.78rem; font-weight: 700; }
+.project-flow-item strong { display: block; margin: 8px 0 6px; color: #2c3e50; font-size: 0.98rem; }
+.project-flow-item p { color: #596875; font-size: 0.82rem; line-height: 1.45; }
+.project-metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+.project-metric { border: 1px solid #cbd6df; border-left: 4px solid #46667f; padding: 13px 15px; background: #f8fafc; }
+.project-metric span { display: block; color: #667987; font-size: 0.82rem; }
+.project-metric strong { display: block; margin: 5px 0; color: #2c3e50; font-size: 1.65rem; line-height: 1.1; }
+.project-metric small { display: block; color: #5d6a73; font-size: 0.8rem; line-height: 1.42; }
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; flex: 1; min-height: 0; }
+.project-card { border: 1px solid #d1dbe2; padding: 16px 18px; background: #fbfcfd; }
+.project-card h2 { margin-top: 0; }
+.project-card p, .project-card li { font-size: 0.9rem; line-height: 1.55; }
+.project-card ul { margin: 7px 0 0 20px; }
+.project-note { margin-top: 14px; padding: 11px 14px; border-left: 4px solid #647f95; background: #edf3f7; color: #43525e; font-size: 0.9rem; line-height: 1.55; }
+.project-checks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 16px; }
+.project-check { border: 1px solid #c7d5c9; border-top: 4px solid #557c64; padding: 11px; background: #f7fbf8; }
+.project-check b { display: block; color: #557c64; font-size: 0.78rem; }
+.project-check strong { display: block; margin: 7px 0 4px; color: #2f4c3a; font-size: 0.93rem; }
+.project-check span { color: #5f6e66; font-size: 0.78rem; line-height: 1.4; }
+.project-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+.project-timeline > div { position: relative; min-height: 148px; padding: 13px; border: 1px solid #d2dbe1; background: #fbfcfd; }
+.project-timeline > div:not(:last-child)::after { content: ""; position: absolute; top: 33px; right: -10px; z-index: 2; width: 19px; border-top: 2px solid #778d9e; }
+.project-timeline b { display: block; color: #6a8192; font-size: 0.8rem; }
+.project-timeline strong { display: block; margin: 8px 0 5px; color: #2c3e50; font-size: 1rem; }
+.project-timeline p { color: #56656f; font-size: 0.84rem; line-height: 1.48; }
+.project-footer { margin-top: 14px; color: #687780; font-size: 0.78rem; line-height: 1.45; }
+.project-screen-layout { display: grid; grid-template-columns: 1.62fr 0.78fr; gap: 18px; flex: 1; min-height: 0; margin-top: 8px; }
+.project-screen { min-height: 0; border: 1px solid #cbd6df; background: #f8fafc; overflow: hidden; display: flex; flex-direction: column; }
+.project-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.project-screen figcaption { padding: 7px 10px; color: #64737c; font-size: 0.75rem; line-height: 1.4; border-top: 1px solid #dbe3e8; background: white; }
+.project-audit-list { display: grid; align-content: start; gap: 9px; }
+.project-audit-item { border: 1px solid #d1dbe2; border-left: 4px solid #557c64; padding: 10px 11px; background: #fbfcfd; }
+.project-audit-item:nth-child(2) { border-left-color: #46667f; }
+.project-audit-item:nth-child(3) { border-left-color: #b97e2c; }
+.project-audit-item:nth-child(4) { border-left-color: #a85b45; }
+.project-audit-item b { display: block; color: #2c3e50; font-size: 0.9rem; margin-bottom: 4px; }
+.project-audit-item span { display: block; color: #5e6c75; font-size: 0.78rem; line-height: 1.43; }
+.project-image-layout { display: grid; grid-template-columns: 1.03fr 0.97fr; gap: 20px; flex: 1; min-height: 0; margin-top: 8px; }
+.project-image-layout .method-fig { display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+.project-image-layout .method-fig img { max-height: 365px; object-fit: contain; }
+.project-term-list { display: grid; gap: 10px; align-content: start; }
+.project-term { display: grid; grid-template-columns: 70px 1fr; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid #d1dbe2; background: #fbfcfd; }
+.project-term code { display: inline-block; padding: 4px 6px; background: #edf3f7; color: #2c3e50; font: 700 0.82rem "Menlo", monospace; text-align: center; }
+.project-term span { color: #52606b; font-size: 0.85rem; line-height: 1.43; }
+.project-compare { width: 100%; border-collapse: collapse; margin-top: 14px; }
+.project-compare th, .project-compare td { border: 1px solid #d1dbe2; padding: 9px 11px; text-align: left; vertical-align: top; font-size: 0.84rem; line-height: 1.42; }
+.project-compare th { background: #edf3f7; color: #2c3e50; font-weight: 600; }
+.project-compare td:first-child { width: 120px; color: #2c3e50; font-weight: 600; background: #f8fafc; }
+.project-hero-layout { display: grid; grid-template-columns: 1.14fr 0.86fr; gap: 18px; flex: 1; min-height: 0; }
+.project-story-intro { display: flex; flex-direction: column; padding: 20px 22px; border: 1px solid #cbd6df; border-top: 5px solid #46667f; background: #fbfcfd; }
+.project-story-intro h2 { margin-top: 0; font-size: 1.24rem; }
+.project-story-intro p { color: #4f5e68; font-size: 0.96rem; line-height: 1.62; }
+.project-story-intro .project-note { margin-top: auto; }
+.project-three-up { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.project-mini-panel { min-width: 0; padding: 12px 13px; border: 1px solid #d3dce2; background: #fff; }
+.project-mini-panel b, .project-mini-panel strong, .project-mini-panel span { display: block; }
+.project-mini-panel b { color: #70879a; font-size: 0.72rem; letter-spacing: 0.55px; }
+.project-mini-panel strong { margin: 5px 0; color: #2c3e50; font-size: 0.96rem; }
+.project-mini-panel span { color: #60707b; font-size: 0.78rem; line-height: 1.42; }
+.project-outcome-stack { display: grid; gap: 10px; align-content: start; }
+.project-outcome { position: relative; padding: 14px 16px 14px 52px; border: 1px solid #cdd9d2; background: #f8fbf8; }
+.project-outcome::before { position: absolute; left: 15px; top: 14px; width: 25px; height: 25px; border-radius: 50%; background: #557c64; color: #fff; font: 700 0.77rem/25px "Menlo", monospace; text-align: center; content: attr(data-no); }
+.project-outcome b, .project-outcome span { display: block; }
+.project-outcome b { color: #355845; font-size: 0.95rem; }
+.project-outcome span { margin-top: 4px; color: #5d6f65; font-size: 0.8rem; line-height: 1.42; }
+.project-compare-board { display: grid; grid-template-columns: 0.93fr 1.07fr; gap: 18px; flex: 1; min-height: 0; }
+.project-contrast-side { min-width: 0; padding: 17px 18px; border: 1px solid #d3dce2; background: #fbfcfd; }
+.project-contrast-side.direct { border-top: 5px solid #a85b45; background: #fff9f7; }
+.project-contrast-side.structured { border-top: 5px solid #557c64; background: #f8fbf8; }
+.project-contrast-side h2 { margin-top: 0; font-size: 1.08rem; }
+.project-contrast-side ul { margin: 9px 0 0 19px; }
+.project-contrast-side li { margin: 9px 0; font-size: 0.87rem; line-height: 1.45; }
+.project-contrast-side li::marker { color: #557c64; }
+.project-contrast-side.direct li::marker { color: #a85b45; }
+.project-contrast-result { margin-top: 13px; padding: 10px 12px; border-left: 3px solid #557c64; color: #41584a; background: #eaf2eb; font-size: 0.82rem; line-height: 1.45; }
+.project-role-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; flex: 1; min-height: 0; }
+.project-role-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 13px 11px 11px; border: 1px solid #cad7de; border-top: 5px solid #46667f; background: #fbfcfd; }
+.project-role-card:not(:last-child)::after { position: absolute; z-index: 2; top: 52px; right: -12px; width: 16px; color: #71879a; background: #fff; content: "→"; font-size: 1rem; line-height: 1; text-align: center; }
+.project-role-card b { color: #73889a; font: 700 0.7rem "Menlo", monospace; }
+.project-role-card strong { margin: 7px 0 6px; color: #2c3e50; font-size: 0.92rem; line-height: 1.3; }
+.project-role-card p { color: #596973; font-size: 0.77rem; line-height: 1.4; }
+.project-role-card small { display: block; margin-top: auto; padding-top: 8px; border-top: 1px solid #dbe3e8; color: #486274; font-size: 0.72rem; line-height: 1.35; }
+.project-check-board { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; flex: 1; min-height: 0; }
+.project-check-rich { display: flex; flex-direction: column; min-width: 0; padding: 14px 12px; border: 1px solid #c7d5c9; border-top: 5px solid #557c64; background: #f8fbf8; }
+.project-check-rich b { color: #557c64; font-size: 0.73rem; }
+.project-check-rich strong { margin: 7px 0; color: #2f4c3a; font-size: 0.94rem; line-height: 1.3; }
+.project-check-rich span { color: #5b6e62; font-size: 0.78rem; line-height: 1.42; }
+.project-check-rich small { display: block; margin-top: auto; padding-top: 8px; border-top: 1px solid #d7e2d9; color: #456956; font-size: 0.72rem; line-height: 1.38; }
+.project-architecture { display: grid; grid-template-columns: 0.9fr 1.14fr 0.96fr; gap: 12px; flex: 1; min-height: 0; }
+.project-arch-zone { min-width: 0; padding: 14px 15px; border: 1px solid #d0dae0; background: #fbfcfd; }
+.project-arch-zone h2 { margin: 0 0 8px; font-size: 1.03rem; }
+.project-arch-zone > p { color: #5b6a74; font-size: 0.81rem; line-height: 1.43; }
+.project-arch-list { display: grid; gap: 7px; margin-top: 12px; }
+.project-arch-list div { padding: 8px 9px; border-left: 3px solid #46667f; background: #eef3f6; color: #465966; font-size: 0.78rem; line-height: 1.4; }
+.project-arch-list div strong { color: #2f4d61; }
+.project-arch-zone.orchestrator { border-top: 5px solid #557c64; background: #f8fbf8; }
+.project-arch-zone.orchestrator .project-arch-list div { border-left-color: #557c64; background: #eaf2eb; color: #466152; }
+.project-arch-zone.archive { border-top: 5px solid #b97e2c; background: #fffaf2; }
+.project-arch-zone.archive .project-arch-list div { border-left-color: #b97e2c; background: #fff2db; color: #6d5732; }
+.case-banner { display: grid; grid-template-columns: 1.07fr 0.93fr; gap: 14px; margin-bottom: 12px; }
+.case-prompt { padding: 13px 15px; border: 1px solid #cbd6df; border-left: 5px solid #46667f; background: #f8fafc; }
+.case-prompt span, .case-prompt strong, .case-prompt p { display: block; }
+.case-prompt span { color: #6e8496; font: 700 0.72rem "Menlo", monospace; letter-spacing: 0.45px; }
+.case-prompt strong { margin: 5px 0; color: #263b4b; font-size: 1.12rem; line-height: 1.3; }
+.case-prompt p { color: #63727e; font-size: 0.78rem; line-height: 1.42; }
+.case-stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #cad6dc; background: #fff; }
+.case-stat-strip div { min-width: 0; padding: 10px 10px; border-right: 1px solid #d9e2e6; }
+.case-stat-strip div:last-child { border-right: 0; }
+.case-stat-strip span, .case-stat-strip strong, .case-stat-strip small { display: block; }
+.case-stat-strip span { color: #758995; font-size: 0.68rem; }
+.case-stat-strip strong { margin: 3px 0; color: #355c48; font-size: 1.25rem; line-height: 1.1; }
+.case-stat-strip small { color: #69767c; font-size: 0.68rem; line-height: 1.3; }
+.case-run-board { display: grid; grid-template-columns: 0.96fr 1.08fr 0.96fr; gap: 12px; flex: 1; min-height: 0; }
+.case-board-panel { min-width: 0; padding: 13px 14px; border: 1px solid #cfdbe1; background: #fbfcfd; }
+.case-board-panel h2 { margin: 0 0 9px; font-size: 1rem; }
+.case-board-panel > p { color: #5d6b74; font-size: 0.78rem; line-height: 1.42; }
+.case-target-list { display: grid; gap: 7px; }
+.case-target { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 7px 7px; border-left: 3px solid #557c64; background: #edf4ee; }
+.case-target.pending { border-left-color: #b97e2c; background: #fff5e3; }
+.case-target i { display: inline-grid; place-items: center; width: 21px; height: 21px; border-radius: 50%; background: #557c64; color: #fff; font: 700 0.67rem "Menlo", monospace; font-style: normal; }
+.case-target.pending i { background: #b97e2c; }
+.case-target strong, .case-target small { display: block; }
+.case-target strong { color: #385542; font-size: 0.78rem; line-height: 1.34; }
+.case-target.pending strong { color: #795b28; }
+.case-target small { margin-top: 2px; color: #66746d; font-size: 0.69rem; line-height: 1.32; }
+.case-artifact-list { display: grid; gap: 8px; }
+.case-artifact { padding: 10px 11px; border: 1px solid #d4dee3; background: #fff; }
+.case-artifact b, .case-artifact span, .case-artifact small { display: block; }
+.case-artifact b { color: #6e8496; font-size: 0.7rem; }
+.case-artifact span { margin: 3px 0; color: #344c5c; font-size: 0.84rem; font-weight: 600; }
+.case-artifact small { color: #66747c; font-size: 0.72rem; line-height: 1.36; }
+.case-flow-rail { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-top: 12px; }
+.case-flow-node { position: relative; min-width: 0; min-height: 94px; padding: 10px 11px; border: 1px solid #cbd8de; background: #f9fbfc; }
+.case-flow-node:not(:last-child)::after { position: absolute; top: 42px; right: -12px; z-index: 2; width: 15px; color: #6f8597; background: #fff; content: "→"; text-align: center; }
+.case-flow-node b, .case-flow-node strong, .case-flow-node span { display: block; }
+.case-flow-node b { color: #6a8192; font-size: 0.68rem; }
+.case-flow-node strong { margin: 4px 0; color: #2e4b5e; font-size: 0.88rem; }
+.case-flow-node span { color: #60707a; font-size: 0.72rem; line-height: 1.35; }
+.screen-focus-layout { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; flex: 1; min-height: 0; }
+.screen-focus { min-height: 0; margin: 0; padding: 7px; border: 1px solid #cbd6df; background: #f6f8f8; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.screen-focus img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.screen-callouts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.screen-callout { min-width: 0; padding: 9px 10px; border-top: 4px solid #46667f; background: #eef3f6; }
+.screen-callout:nth-child(2) { border-top-color: #557c64; background: #edf5ee; }
+.screen-callout:nth-child(3) { border-top-color: #b97e2c; background: #fff5e3; }
+.screen-callout:nth-child(4) { border-top-color: #a85b45; background: #fff0ec; }
+.screen-callout b, .screen-callout span { display: block; }
+.screen-callout b { color: #365369; font-size: 0.79rem; }
+.screen-callout span { margin-top: 4px; color: #61717b; font-size: 0.71rem; line-height: 1.34; }
+.screen-callout:nth-child(2) b { color: #365945; }.screen-callout:nth-child(3) b { color: #7b5c2c; }.screen-callout:nth-child(4) b { color: #874c3d; }
+.insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; min-height: 0; }
+.insight-card { display: flex; flex-direction: column; min-width: 0; padding: 16px 16px 13px; border: 1px solid #ced9df; border-top: 5px solid #46667f; background: #fbfcfd; }
+.insight-card:nth-child(2) { border-top-color: #557c64; background: #f8fbf8; }.insight-card:nth-child(3) { border-top-color: #b97e2c; background: #fffaf2; }
+.insight-card b { color: #688096; font-size: 0.72rem; letter-spacing: 0.5px; }.insight-card strong { margin: 7px 0; color: #29475a; font-size: 1rem; line-height: 1.32; }.insight-card p { color: #5d6c75; font-size: 0.82rem; line-height: 1.48; }.insight-card ul { margin: 7px 0 0 18px; }.insight-card li { margin: 5px 0; color: #566771; font-size: 0.77rem; line-height: 1.36; }.insight-card small { display: block; margin-top: auto; padding-top: 8px; border-top: 1px solid #dbe3e8; color: #627784; font-size: 0.71rem; line-height: 1.36; }
+.recovery-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; min-height: 0; }
+.recovery-step { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 14px 13px; border: 1px solid #d2dbe1; background: #fbfcfd; }.recovery-step:not(:last-child)::after { position: absolute; top: 50%; right: -13px; z-index: 2; width: 16px; color: #798d9d; background: #fff; content: "→"; text-align: center; }
+.recovery-step b { color: #708698; font-size: 0.72rem; }.recovery-step strong { margin: 8px 0 6px; color: #314d60; font-size: 0.98rem; line-height: 1.32; }.recovery-step p { color: #5d6d77; font-size: 0.8rem; line-height: 1.44; }.recovery-step small { display: block; margin-top: auto; padding-top: 9px; border-top: 1px solid #dce4e8; color: #6a7b86; font-size: 0.71rem; line-height: 1.35; }
+.recovery-step.warn { border-top: 5px solid #a85b45; background: #fff8f5; }.recovery-step.continue { border-top: 5px solid #557c64; background: #f8fbf8; }.recovery-step.deliver { border-top: 5px solid #46667f; background: #f7fafc; }
+.attachment-board { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; flex: 1; min-height: 0; }.attachment-board .method-fig { min-height: 0; display: flex; flex-direction: column; justify-content: center; }.attachment-board .method-fig img { max-height: 360px; object-fit: contain; }
+.attachment-notes { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; min-height: 0; }.attachment-note { padding: 12px 13px; border: 1px solid #d0dbe2; background: #fbfcfd; }.attachment-note h2 { margin: 0 0 5px; font-size: 0.98rem; }.attachment-note p { color: #5d6d77; font-size: 0.8rem; line-height: 1.43; }
+.slot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }.slot-card { min-width: 0; min-height: 93px; padding: 10px; border: 1px solid #d5dfdf; border-left: 4px solid #557c64; background: #f3f8f3; }.slot-card.pending { border-left-color: #b97e2c; background: #fff6e5; }.slot-card b, .slot-card strong, .slot-card small { display: block; }.slot-card b { color: #5d7a67; font-size: 0.68rem; }.slot-card.pending b { color: #916d31; }.slot-card strong { margin: 4px 0; color: #385643; font-size: 0.78rem; line-height: 1.28; }.slot-card.pending strong { color: #765d31; }.slot-card small { color: #67736a; font-size: 0.68rem; line-height: 1.3; }
+.fusion-board { display: grid; grid-template-columns: 0.92fr 0.12fr 0.92fr 0.12fr 0.92fr 0.12fr 0.92fr; align-items: center; gap: 6px; flex: 1; min-height: 0; }.fusion-node { min-width: 0; padding: 16px 13px; border: 1px solid #cbd7de; background: #fbfcfd; text-align: center; }.fusion-node.blue { border-top: 5px solid #4e7eab; background: #f3f8fc; }.fusion-node.green { border-top: 5px solid #678f47; background: #f6faef; }.fusion-node.gold { border-top: 5px solid #b97e2c; background: #fff8eb; }.fusion-node.dark { border-top: 5px solid #355d4a; background: #f2f7f3; }.fusion-node b, .fusion-node strong, .fusion-node span { display: block; }.fusion-node b { color: #607687; font-size: 0.7rem; }.fusion-node strong { margin: 6px 0; color: #2f4e61; font-size: 0.95rem; }.fusion-node span { color: #5e6e78; font-size: 0.74rem; line-height: 1.35; }.fusion-arrow { color: #71889a; font-size: 1.35rem; text-align: center; }.fusion-caption { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 12px; }.fusion-caption div { padding: 9px 11px; border-left: 3px solid #46667f; background: #eef3f6; color: #566972; font-size: 0.75rem; line-height: 1.38; }.fusion-caption div:nth-child(2) { border-left-color: #678f47; background: #f2f7ed; }.fusion-caption div:nth-child(3) { border-left-color: #b97e2c; background: #fff5e2; }
+.case-compare-rich { width: 100%; border-collapse: separate; border-spacing: 0 7px; margin-top: 6px; }.case-compare-rich th { padding: 8px 10px; color: #365267; font-size: 0.78rem; text-align: left; }.case-compare-rich td { padding: 10px 11px; border-top: 1px solid #d3dde2; border-bottom: 1px solid #d3dde2; background: #fbfcfd; color: #56666f; font-size: 0.78rem; line-height: 1.38; vertical-align: top; }.case-compare-rich td:first-child { width: 125px; border-left: 4px solid #46667f; color: #2c4b5e; font-weight: 700; }.case-compare-rich td:last-child { border-right: 1px solid #d3dde2; }.case-compare-rich tr:nth-child(2) td:first-child { border-left-color: #557c64; }.case-compare-rich tr:nth-child(3) td:first-child { border-left-color: #b97e2c; }.case-compare-rich tr:nth-child(4) td:first-child { border-left-color: #a85b45; }
+.contribution-board { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 18px; flex: 1; min-height: 0; }.contribution-stack { display: grid; gap: 9px; }.contribution-item { display: grid; grid-template-columns: 68px 1fr; gap: 11px; padding: 12px 13px; border: 1px solid #d0dbe0; background: #fbfcfd; }.contribution-item b { color: #46667f; font: 700 0.7rem "Menlo", monospace; }.contribution-item strong, .contribution-item span { display: block; }.contribution-item strong { color: #2f4c60; font-size: 0.9rem; }.contribution-item span { margin-top: 4px; color: #5d6d76; font-size: 0.77rem; line-height: 1.38; }.contribution-proof { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start; }.contribution-proof div { min-height: 108px; padding: 14px; border: 1px solid #cbd9d0; background: #f7fbf8; }.contribution-proof b, .contribution-proof strong, .contribution-proof span { display: block; }.contribution-proof b { color: #5e806a; font-size: 0.7rem; }.contribution-proof strong { margin: 6px 0; color: #355745; font-size: 1.12rem; }.contribution-proof span { color: #617269; font-size: 0.75rem; line-height: 1.36; }
+.project-screen img { object-fit: contain; background: #f6f8f8; }
+
+/* Deep-research presentation: each slide has one job and uses only recorded runtime facts. */
+.research-slide h1 { margin-bottom: 12px; font-size: 1.88rem; }
+.research-slide .project-lede { margin-bottom: 13px; font-size: 0.97rem; line-height: 1.55; }
+.deck-eyebrow { color: #59748a; font: 700 0.72rem "Menlo", monospace; letter-spacing: 0.8px; }
+.deck-note { margin-top: 11px; padding: 9px 12px; border-left: 4px solid #557c64; background: #edf5ee; color: #415d4b; font-size: 0.8rem; line-height: 1.42; }
+.deck-grid-two { display: grid; grid-template-columns: 1.04fr 0.96fr; gap: 14px; flex: 1; min-height: 0; }
+.deck-card { min-width: 0; padding: 14px 15px; border: 1px solid #cfdae0; background: #fbfcfd; }
+.deck-card h2 { margin: 0 0 7px; font-size: 1rem; }
+.deck-card p { color: #596973; font-size: 0.8rem; line-height: 1.46; }
+.outcome-route { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-top: 13px; }
+.outcome-route article { position: relative; min-width: 0; min-height: 152px; padding: 12px 12px 10px; border: 1px solid #cbd7de; border-top: 4px solid #46667f; background: #f9fbfc; }
+.outcome-route article:nth-child(2) { border-top-color: #557c64; background: #f7fbf8; }
+.outcome-route article:nth-child(3) { border-top-color: #b97e2c; background: #fffaf2; }
+.outcome-route article:nth-child(4) { border-top-color: #a85b45; background: #fff8f6; }
+.outcome-route article:not(:last-child)::after { position: absolute; top: 57px; right: -13px; z-index: 2; width: 17px; color: #71879a; background: white; content: "->"; font: 700 0.78rem "Menlo", monospace; text-align: center; }
+.outcome-route b, .outcome-route strong, .outcome-route span { display: block; }
+.outcome-route b { color: #70879a; font-size: 0.69rem; letter-spacing: 0.45px; }
+.outcome-route strong { margin: 6px 0; color: #2d4a5d; font-size: 0.94rem; line-height: 1.28; }
+.outcome-route span { color: #5e6e78; font-size: 0.76rem; line-height: 1.4; }
+.deck-checklist { display: grid; gap: 9px; align-content: start; }
+.deck-checklist article { display: grid; grid-template-columns: 31px 1fr; gap: 9px; padding: 10px 11px; border: 1px solid #d1dce1; background: #fff; }
+.deck-checklist i { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; background: #46667f; color: white; font: 700 0.7rem "Menlo", monospace; font-style: normal; }
+.deck-checklist strong, .deck-checklist span { display: block; }
+.deck-checklist strong { color: #314e61; font-size: 0.84rem; }
+.deck-checklist span { margin-top: 2px; color: #62727c; font-size: 0.74rem; line-height: 1.34; }
+.frontend-atlas { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 15px; flex: 1; min-height: 0; }
+.atlas-groups { display: grid; grid-template-rows: repeat(4, 1fr); gap: 8px; min-height: 0; }
+.atlas-group { display: grid; grid-template-columns: 94px 1fr; gap: 10px; align-items: center; padding: 10px 11px; border: 1px solid #d0dbe1; background: #fbfcfd; }
+.atlas-group:nth-child(2) { border-left: 4px solid #557c64; background: #f8fbf8; }
+.atlas-group:nth-child(3) { border-left: 4px solid #b97e2c; background: #fffaf2; }
+.atlas-group:nth-child(4) { border-left: 4px solid #a85b45; background: #fff8f6; }
+.atlas-group b { color: #36536a; font-size: 0.82rem; line-height: 1.25; }
+.atlas-group span { color: #5f6e77; font-size: 0.76rem; line-height: 1.38; }
+.atlas-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.atlas-steps div { padding: 8px 9px; border-top: 3px solid #46667f; background: #edf3f6; color: #4e626f; font-size: 0.73rem; line-height: 1.34; }
+.core-role-layout { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 14px; flex: 1; min-height: 0; }
+.core-role-side { padding: 14px; border: 1px solid #cbd8de; border-top: 5px solid #46667f; background: #f8fafc; }
+.core-role-side h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.core-role-side p { color: #586975; font-size: 0.82rem; line-height: 1.48; }
+.core-role-side dl { margin-top: 12px; }
+.core-role-side dt { margin-top: 8px; color: #3b5a70; font-size: 0.75rem; font-weight: 700; }
+.core-role-side dd { margin: 2px 0; color: #5e6f78; font-size: 0.76rem; line-height: 1.38; }
+.role-operation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; align-content: start; }
+.role-operation { min-width: 0; min-height: 178px; padding: 12px 12px 10px; border: 1px solid #cfdae0; border-top: 4px solid #557c64; background: #f8fbf8; }
+.role-operation:nth-child(2), .role-operation:nth-child(5) { border-top-color: #46667f; background: #f7fafc; }
+.role-operation:nth-child(3), .role-operation:nth-child(6) { border-top-color: #b97e2c; background: #fffaf2; }
+.role-operation b, .role-operation strong, .role-operation span, .role-operation small { display: block; }
+.role-operation b { color: #688095; font: 700 0.68rem "Menlo", monospace; }
+.role-operation strong { margin: 5px 0; color: #2e4c5f; font-size: 0.91rem; line-height: 1.24; }
+.role-operation span { color: #596c76; font-size: 0.74rem; line-height: 1.37; }
+.role-operation small { margin-top: 8px; padding-top: 7px; border-top: 1px solid #dbe4e7; color: #416452; font-size: 0.7rem; line-height: 1.34; }
+.handoff-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; flex: 1; min-height: 0; }
+.handoff-part { position: relative; min-width: 0; padding: 15px 15px 12px; border: 1px solid #d0dbe0; background: #fbfcfd; }
+.handoff-part:not(:last-child)::after { position: absolute; top: 50%; right: -13px; z-index: 2; width: 16px; color: #6f8494; background: white; content: "->"; font: 700 0.75rem "Menlo", monospace; text-align: center; }
+.handoff-part:nth-child(1) { border-top: 5px solid #46667f; }.handoff-part:nth-child(2) { border-top: 5px solid #b97e2c; background: #fffaf2; }.handoff-part:nth-child(3) { border-top: 5px solid #557c64; background: #f8fbf8; }
+.handoff-part code { display: inline-block; margin-bottom: 7px; padding: 3px 5px; background: #ecf1f4; color: #36546a; font: 700 0.7rem "Menlo", monospace; }
+.handoff-part h2 { margin: 0 0 7px; font-size: 0.98rem; }
+.handoff-part p { color: #596a73; font-size: 0.79rem; line-height: 1.44; }
+.handoff-fields { display: grid; gap: 5px; margin-top: 10px; }
+.handoff-fields div { padding: 5px 7px; border-left: 3px solid #7995a8; background: #f2f6f8; color: #50626e; font-size: 0.71rem; line-height: 1.34; }
+.handoff-scenario { display: grid; grid-template-columns: 0.93fr 0.11fr 0.93fr 0.11fr 0.93fr; align-items: center; gap: 5px; margin-top: 12px; }
+.handoff-scenario div { padding: 8px 10px; border: 1px solid #d3dde2; background: #f9fbfc; color: #53646e; font-size: 0.74rem; line-height: 1.35; }
+.handoff-scenario b { color: #2f4d60; }.handoff-scenario i { color: #698093; font-style: normal; text-align: center; }
+.protocol-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; flex: 1; min-height: 0; }
+.protocol-card { min-width: 0; padding: 12px 13px; border: 1px solid #ccd8df; background: #fbfcfd; }
+.protocol-card:nth-child(2) { border-top: 4px solid #46667f; }.protocol-card:nth-child(3) { border-top: 4px solid #557c64; background: #f8fbf8; }.protocol-card:nth-child(4) { border-top: 4px solid #b97e2c; background: #fffaf2; }.protocol-card:nth-child(5) { border-top: 4px solid #a85b45; background: #fff8f6; }
+.protocol-card b, .protocol-card strong, .protocol-card span, .protocol-card small { display: block; }
+.protocol-card b { color: #698093; font: 700 0.68rem "Menlo", monospace; }.protocol-card strong { margin: 4px 0; color: #2e4b5d; font-size: 0.92rem; line-height: 1.28; }.protocol-card span { color: #5a6b75; font-size: 0.75rem; line-height: 1.38; }.protocol-card small { margin-top: 7px; color: #466454; font-size: 0.7rem; line-height: 1.33; }
+.runtime-shot-layout { display: grid; grid-template-columns: 1.17fr 0.83fr; gap: 15px; flex: 1; min-height: 0; }
+.runtime-shot { min-height: 0; margin: 0; padding: 5px; border: 1px solid #cbd7de; background: #f5f7f5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.runtime-shot img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.runtime-shot-notes { display: grid; align-content: start; gap: 8px; }
+.runtime-shot-notes article { padding: 10px 11px; border-left: 4px solid #46667f; background: #edf3f6; }.runtime-shot-notes article:nth-child(2) { border-left-color: #557c64; background: #edf5ee; }.runtime-shot-notes article:nth-child(3) { border-left-color: #b97e2c; background: #fff5e3; }.runtime-shot-notes article:nth-child(4) { border-left-color: #a85b45; background: #fff0ec; }
+.runtime-shot-notes b, .runtime-shot-notes span { display: block; }.runtime-shot-notes b { color: #36536a; font-size: 0.81rem; }.runtime-shot-notes span { margin-top: 3px; color: #5d6e78; font-size: 0.75rem; line-height: 1.36; }
+.record-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+.record-strip div { min-width: 0; padding: 9px 10px; border: 1px solid #d1dce1; background: #fbfcfd; }.record-strip b, .record-strip strong, .record-strip small { display: block; }.record-strip b { color: #6d8294; font-size: 0.68rem; }.record-strip strong { margin: 3px 0; color: #365945; font-size: 1rem; line-height: 1.15; }.record-strip small { color: #61717a; font-size: 0.69rem; line-height: 1.31; }
+.case-plan-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 14px; flex: 1; min-height: 0; }
+.case-prompt-block { padding: 15px; border: 1px solid #cad7df; border-top: 5px solid #46667f; background: #f8fafc; }.case-prompt-block h2 { margin: 5px 0 8px; font-size: 1.2rem; }.case-prompt-block p { color: #566974; font-size: 0.82rem; line-height: 1.48; }
+.case-question-list { display: grid; gap: 7px; }.case-question-list div { display: grid; grid-template-columns: 27px 1fr; gap: 7px; padding: 8px 9px; border-left: 3px solid #557c64; background: #edf5ee; color: #4b6254; font-size: 0.77rem; line-height: 1.36; }.case-question-list b { display: grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; background: #557c64; color: white; font: 700 0.65rem "Menlo", monospace; }
+.case-process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; flex: 1; min-height: 0; }.case-process { position: relative; min-width: 0; padding: 12px 11px; border: 1px solid #cfdae0; background: #fbfcfd; }.case-process:nth-child(2) { border-top: 4px solid #46667f; }.case-process:nth-child(3) { border-top: 4px solid #557c64; background: #f8fbf8; }.case-process:nth-child(4) { border-top: 4px solid #b97e2c; background: #fffaf2; }.case-process:nth-child(5) { border-top: 4px solid #a85b45; background: #fff8f6; }.case-process:not(:last-child)::after { position: absolute; top: 52px; right: -12px; z-index: 2; width: 15px; color: #718698; background: white; content: "->"; font: 700 0.7rem "Menlo", monospace; text-align: center; }.case-process b, .case-process strong, .case-process span { display: block; }.case-process b { color: #718698; font-size: 0.67rem; }.case-process strong { margin: 5px 0; color: #304d60; font-size: 0.86rem; line-height: 1.27; }.case-process span { color: #5d6e78; font-size: 0.73rem; line-height: 1.36; }
+.case-comparison { width: 100%; border-collapse: separate; border-spacing: 0 7px; }.case-comparison th { padding: 5px 10px; color: #365269; font-size: 0.75rem; text-align: left; }.case-comparison td { padding: 9px 10px; border-top: 1px solid #d1dce1; border-bottom: 1px solid #d1dce1; background: #fbfcfd; color: #56666f; font-size: 0.76rem; line-height: 1.36; vertical-align: top; }.case-comparison td:first-child { width: 136px; border-left: 4px solid #46667f; color: #304d60; font-weight: 700; }.case-comparison td:last-child { border-right: 1px solid #d1dce1; }.case-comparison tr:nth-child(2) td:first-child { border-left-color: #557c64; }.case-comparison tr:nth-child(3) td:first-child { border-left-color: #b97e2c; }.case-comparison tr:nth-child(4) td:first-child { border-left-color: #a85b45; }
+.deck-grid-two > .deck-card, .frontend-atlas > .deck-card { display: flex; flex-direction: column; }
+.deck-grid-two > .deck-card .outcome-route { flex: 1; align-items: stretch; }
+.deck-grid-two > .deck-checklist { grid-template-rows: repeat(4, 1fr); align-content: stretch; }
+.frontend-atlas > .deck-card .deck-checklist { flex: 1; grid-template-rows: repeat(3, 1fr); align-content: stretch; }
+.core-role-side { display: flex; flex-direction: column; }
+.core-role-side dl { flex: 1; display: grid; align-content: space-around; }
+.role-operation-grid { grid-template-rows: repeat(2, 1fr); align-content: stretch; }
+.handoff-part { display: flex; flex-direction: column; justify-content: space-between; }
+.protocol-card:last-child { grid-column: 1 / -1; }
+.fusion-board { align-items: stretch; }
+.fusion-node { display: flex; flex-direction: column; justify-content: center; }
+.fusion-arrow { align-self: center; }
+.project-arch-zone { display: flex; flex-direction: column; }
+.project-arch-list { flex: 1; align-content: space-around; }
+.fusion-node small { display: block; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(78, 105, 119, 0.24); color: #60717a; font-size: 0.69rem; line-height: 1.34; }
+
+/* Readability pass for the project-report section: larger type, tighter margins, and denser information bands. */
+body { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+body { counter-reset: slide; }
+.slide { counter-increment: slide; padding: 36px 52px 30px; }
+.slide-number { right: 20px; bottom: 12px; font-size: 0; }
+.slide-number::after { content: counter(slide); color: #66747d; font-size: 0.92rem; }
+h1 { font-size: 2.08rem; padding-bottom: 8px; margin-bottom: 13px; }
+h2 { font-size: 1.16rem; margin: 7px 0 6px; }
+p { font-size: 1rem; line-height: 1.56; }
+li { font-size: 0.97rem; line-height: 1.48; margin: 5px 0; }
+.research-slide h1 { margin-bottom: 10px; font-size: 2.08rem; line-height: 1.28; }
+.research-slide .project-lede { margin-bottom: 10px; font-size: 1rem; line-height: 1.5; }
+.deck-eyebrow { font-size: 0.74rem; }
+.deck-note { margin-top: 9px; padding: 10px 13px; font-size: 0.89rem; line-height: 1.45; }
+.deck-card { padding: 13px 14px; }
+.deck-card h2 { font-size: 1.08rem; }
+.deck-card p { font-size: 0.9rem; line-height: 1.46; }
+.outcome-route { margin-top: 10px; gap: 8px; }
+.outcome-route article { min-height: 146px; padding: 10px 10px 9px; }
+.outcome-route b { font-size: 0.74rem; }
+.outcome-route strong { font-size: 0.98rem; }
+.outcome-route span { font-size: 0.83rem; line-height: 1.37; }
+.deck-checklist { gap: 7px; }
+.deck-checklist article { grid-template-columns: 34px 1fr; gap: 8px; padding: 9px 10px; }
+.deck-checklist i { width: 25px; height: 25px; font-size: 0.75rem; }
+.deck-checklist strong { font-size: 0.91rem; }
+.deck-checklist span { font-size: 0.83rem; line-height: 1.36; }
+.atlas-group { grid-template-columns: 103px 1fr; padding: 9px 10px; }
+.atlas-group b { font-size: 0.9rem; }
+.atlas-group span { font-size: 0.84rem; line-height: 1.35; }
+.atlas-steps div { font-size: 0.81rem; line-height: 1.32; }
+.core-role-side { padding: 13px; }
+.core-role-side h2 { font-size: 1.12rem; }
+.core-role-side p { font-size: 0.89rem; line-height: 1.44; }
+.core-role-side dt { font-size: 0.82rem; }
+.core-role-side dd { font-size: 0.83rem; line-height: 1.35; }
+.role-operation { min-height: 0; padding: 11px 11px 9px; }
+.role-operation b { font-size: 0.73rem; }
+.role-operation strong { font-size: 0.97rem; }
+.role-operation span { font-size: 0.82rem; line-height: 1.35; }
+.role-operation small { font-size: 0.78rem; line-height: 1.32; }
+.handoff-part { padding: 13px 13px 10px; }
+.handoff-part h2 { font-size: 1.04rem; }
+.handoff-part p { font-size: 0.87rem; line-height: 1.4; }
+.handoff-fields div { font-size: 0.79rem; line-height: 1.3; }
+.handoff-scenario div { font-size: 0.83rem; line-height: 1.34; }
+.protocol-card { padding: 11px 12px; }
+.protocol-card b { font-size: 0.72rem; }
+.protocol-card strong { font-size: 0.98rem; }
+.protocol-card span { font-size: 0.84rem; line-height: 1.34; }
+.protocol-card small { font-size: 0.78rem; line-height: 1.3; }
+.project-arch-zone { padding: 13px 13px; }
+.project-arch-zone h2 { font-size: 1.1rem; }
+.project-arch-zone > p { font-size: 0.87rem; line-height: 1.4; }
+.project-arch-list div { font-size: 0.84rem; line-height: 1.34; }
+.publication-meta { font-size: 0.82rem; line-height: 1.35; }
+.runtime-shot-notes b { font-size: 0.9rem; }
+.runtime-shot-notes span { font-size: 0.84rem; line-height: 1.34; }
+.record-strip b { font-size: 0.76rem; }
+.record-strip strong { font-size: 1.08rem; }
+.record-strip small { font-size: 0.78rem; line-height: 1.28; }
+.case-prompt-block { padding: 13px; }
+.case-prompt-block h2 { font-size: 1.24rem; }
+.case-prompt-block p { font-size: 0.9rem; line-height: 1.45; }
+.case-question-list div { font-size: 0.85rem; line-height: 1.34; }
+.case-process { padding: 11px 10px; }
+.case-process b { font-size: 0.74rem; }
+.case-process strong { font-size: 0.94rem; }
+.case-process span { font-size: 0.81rem; line-height: 1.34; }
+.case-comparison th { font-size: 0.84rem; }
+.case-comparison td { font-size: 0.84rem; line-height: 1.33; }
+.attachment-note h2 { font-size: 1.04rem; }
+.attachment-note p { font-size: 0.87rem; line-height: 1.38; }
+.project-term span { font-size: 0.88rem; line-height: 1.38; }
+.fusion-node b { font-size: 0.77rem; }
+.fusion-node strong { font-size: 1.03rem; }
+.fusion-node span { font-size: 0.82rem; line-height: 1.32; }
+.fusion-node small { font-size: 0.77rem; line-height: 1.3; }
+.fusion-caption div { font-size: 0.82rem; line-height: 1.36; }
+.contribution-item strong { font-size: 0.97rem; }
+.contribution-item span { font-size: 0.84rem; line-height: 1.35; }
+.contribution-proof span { font-size: 0.82rem; line-height: 1.33; }
+
+/* Project report additions: course alignment, harness boundaries, and evaluation evidence. */
+.reference-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; flex: 1; min-height: 0; }
+.reference-card { display: flex; flex-direction: column; min-width: 0; padding: 14px 13px; border: 1px solid #cbd7de; border-top: 5px solid #46667f; background: #fbfcfd; }
+.reference-card:nth-child(2) { border-top-color: #557c64; background: #f8fbf8; }
+.reference-card:nth-child(3) { border-top-color: #b97e2c; background: #fffaf2; }
+.reference-card:nth-child(4) { border-top-color: #a85b45; background: #fff8f6; }
+.reference-card b, .reference-card strong, .reference-card span, .reference-card small { display: block; }
+.reference-card b { color: #617f92; font: 700 0.73rem "Menlo", monospace; }
+.reference-card strong { margin: 7px 0; color: #2e4d60; font-size: 1rem; line-height: 1.28; }
+.reference-card span { color: #566974; font-size: 0.85rem; line-height: 1.42; }
+.reference-card small { margin-top: auto; padding-top: 9px; border-top: 1px solid #dce4e7; color: #466454; font-size: 0.78rem; line-height: 1.32; }
+.design-conversion { margin-top: 10px; padding: 8px 9px; border-left: 4px solid #557c64; background: #eaf3eb; color: #486150; font-size: 0.8rem; line-height: 1.34; }
+.design-conversion strong { display: inline; margin: 0; color: #2f533c; font-size: inherit; }
+.design-conversion code { color: #315747; }
+.harness-layout { display: grid; grid-template-columns: 0.82fr 1.3fr 0.88fr; gap: 12px; flex: 1; min-height: 0; }
+.harness-zone { min-width: 0; padding: 15px 14px; border: 1px solid #cdd9df; background: #fbfcfd; }
+.harness-zone.base { border-top: 5px solid #46667f; background: #f5f9fc; }
+.harness-zone.core { border-top: 5px solid #557c64; background: #f7fbf8; }
+.harness-zone.archive { border-top: 5px solid #b97e2c; background: #fffaf2; }
+.harness-zone h2 { margin: 0 0 8px; font-size: 1.08rem; }
+.harness-zone > p { color: #566873; font-size: 0.88rem; line-height: 1.43; }
+.harness-zone ul { margin: 10px 0 0 18px; }
+.harness-zone li { color: #52636d; font-size: 0.84rem; line-height: 1.36; }
+.harness-core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 11px; }
+.harness-core-grid div { min-width: 0; padding: 9px 10px; border-left: 4px solid #557c64; background: #eaf3eb; color: #496454; font-size: 0.83rem; line-height: 1.36; }
+.harness-core-grid strong { color: #2f4f3b; }
+.harness-chain { display: grid; grid-template-columns: 1fr 0.12fr 1fr 0.12fr 1fr; align-items: center; gap: 4px; margin-top: 13px; }
+.harness-chain div { padding: 8px 9px; border: 1px solid #d0dce1; background: #fff; color: #52636e; font-size: 0.79rem; line-height: 1.3; }
+.harness-chain i { color: #6c8597; font-style: normal; font-size: 1.1rem; text-align: center; }
+.loop-board { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; flex: 1; min-height: 0; }
+.loop-stage { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 12px 10px; border: 1px solid #cbd7de; border-top: 5px solid #46667f; background: #fbfcfd; }
+.loop-stage:nth-child(2), .loop-stage:nth-child(5) { border-top-color: #557c64; background: #f8fbf8; }
+.loop-stage:nth-child(3), .loop-stage:nth-child(6) { border-top-color: #b97e2c; background: #fffaf2; }
+.loop-stage:nth-child(4) { border-top-color: #a85b45; background: #fff8f6; }
+.loop-stage:not(:last-child)::after { position: absolute; top: 53px; right: -12px; z-index: 2; width: 15px; color: #71879a; background: white; content: "→"; font-size: 0.95rem; text-align: center; }
+.loop-stage b, .loop-stage strong, .loop-stage span, .loop-stage small { display: block; }
+.loop-stage b { color: #668194; font: 700 0.72rem "Menlo", monospace; }
+.loop-stage strong { margin: 6px 0; color: #2d4b5e; font-size: 0.97rem; line-height: 1.28; }
+.loop-stage span { color: #586a74; font-size: 0.83rem; line-height: 1.36; }
+.loop-stage small { margin-top: auto; padding-top: 9px; border-top: 1px solid #dce4e7; color: #456755; font-size: 0.77rem; line-height: 1.3; }
+.loop-return { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 10px; }
+.loop-return div { padding: 9px 11px; border-left: 4px solid #b97e2c; background: #fff6e5; color: #665735; font-size: 0.84rem; line-height: 1.35; }
+.loop-return div:nth-child(2) { border-left-color: #a85b45; background: #fff0ec; color: #704a40; }
+.loop-return div:nth-child(3) { border-left-color: #557c64; background: #edf5ee; color: #46604f; }
+.evidence-layout { display: grid; grid-template-columns: 1.24fr 0.76fr; gap: 13px; flex: 1; min-height: 0; }
+.evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; min-height: 0; }
+.evidence-card { display: flex; flex-direction: column; min-width: 0; padding: 13px 13px 11px; border: 1px solid #cdd9df; border-top: 4px solid #46667f; background: #fbfcfd; }
+.evidence-card:nth-child(2) { border-top-color: #557c64; background: #f8fbf8; }
+.evidence-card:nth-child(3) { border-top-color: #b97e2c; background: #fffaf2; }
+.evidence-card:nth-child(4) { border-top-color: #a85b45; background: #fff8f6; }
+.evidence-card b, .evidence-card strong, .evidence-card span, .evidence-card small { display: block; }
+.evidence-card b { color: #6b8292; font: 700 0.72rem "Menlo", monospace; }
+.evidence-card strong { margin: 6px 0; color: #2e4c5e; font-size: 0.98rem; line-height: 1.27; }
+.evidence-card span { color: #586974; font-size: 0.83rem; line-height: 1.37; }
+.evidence-card small { margin-top: auto; padding-top: 9px; border-top: 1px solid #dce4e7; color: #486453; font-size: 0.78rem; line-height: 1.3; }
+.gate-panel { display: flex; flex-direction: column; min-width: 0; padding: 15px 14px; border: 1px solid #c8d9cc; border-top: 5px solid #557c64; background: #f6fbf7; }
+.gate-panel h2 { margin: 0 0 7px; color: #355945; font-size: 1.08rem; }
+.gate-panel > p { color: #516a5b; font-size: 0.87rem; line-height: 1.4; }
+.gate-list { display: grid; gap: 7px; margin-top: 10px; }
+.gate-list div { display: grid; grid-template-columns: 24px 1fr; gap: 7px; align-items: center; padding: 7px 8px; border: 1px solid #d3e0d6; background: #fff; color: #526a5a; font-size: 0.82rem; line-height: 1.28; }
+.gate-list b { display: grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; background: #557c64; color: white; font: 700 0.68rem "Menlo", monospace; }
+.gate-score { margin-top: auto; padding: 10px 11px; border-left: 4px solid #46667f; background: #edf3f6; color: #4a6170; font-size: 0.81rem; line-height: 1.34; }
+.gate-score strong { display: block; margin-bottom: 3px; color: #2f4f63; }
+.diagnosis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; flex: 1; min-height: 0; }
+.diagnosis-card { min-width: 0; padding: 12px 12px 10px; border: 1px solid #cfdbe1; border-left: 5px solid #46667f; background: #fbfcfd; }
+.diagnosis-card:nth-child(2), .diagnosis-card:nth-child(5) { border-left-color: #557c64; background: #f8fbf8; }
+.diagnosis-card:nth-child(3), .diagnosis-card:nth-child(6) { border-left-color: #b97e2c; background: #fffaf2; }
+.diagnosis-card:nth-child(4) { border-left-color: #a85b45; background: #fff8f6; }
+.diagnosis-card b, .diagnosis-card strong, .diagnosis-card span, .diagnosis-card small { display: block; }
+.diagnosis-card b { color: #6c8293; font: 700 0.72rem "Menlo", monospace; }
+.diagnosis-card strong { margin: 5px 0; color: #2f4d60; font-size: 0.96rem; line-height: 1.27; }
+.diagnosis-card span { color: #596b75; font-size: 0.83rem; line-height: 1.35; }
+.diagnosis-card small { margin-top: 8px; padding-top: 7px; border-top: 1px solid #dce4e7; color: #486253; font-size: 0.78rem; line-height: 1.28; }
+.evaluation-layout { display: grid; grid-template-columns: 0.98fr 1fr 0.94fr; gap: 11px; flex: 1; min-height: 0; }
+.evaluation-zone { display: flex; flex-direction: column; min-width: 0; padding: 13px 13px 11px; border: 1px solid #cfdae0; background: #fbfcfd; }
+.evaluation-zone:nth-child(1) { border-top: 5px solid #46667f; background: #f7fafc; }
+.evaluation-zone:nth-child(2) { border-top: 5px solid #557c64; background: #f8fbf8; }
+.evaluation-zone:nth-child(3) { border-top: 5px solid #b97e2c; background: #fffaf2; }
+.evaluation-zone h2 { margin: 0 0 7px; font-size: 1.05rem; }
+.evaluation-zone p { color: #586a74; font-size: 0.86rem; line-height: 1.39; }
+.evaluation-zone ul { margin: 8px 0 0 18px; }
+.evaluation-zone li { color: #54666f; font-size: 0.82rem; line-height: 1.33; }
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.metric-grid div { padding: 8px 8px; border-left: 3px solid #557c64; background: #edf5ee; color: #4a6253; font-size: 0.81rem; line-height: 1.31; }
+.metric-grid strong { display: block; margin-bottom: 3px; color: #31513d; }
+.evaluation-detail { margin-top: auto; padding: 9px 10px; border-left: 4px solid #46667f; background: #edf3f6; color: #496273; font-size: 0.81rem; line-height: 1.34; }
+.evaluation-detail.green { border-left-color: #557c64; background: #edf5ee; color: #496252; }
+.evaluation-detail.gold { border-left-color: #b97e2c; background: #fff3dc; color: #715b32; }
+.repro-layout { display: grid; grid-template-columns: 0.95fr 1.12fr 0.93fr; gap: 11px; flex: 1; min-height: 0; }
+.repro-zone { min-width: 0; padding: 14px 13px; border: 1px solid #cedae0; background: #fbfcfd; }
+.repro-zone:nth-child(1) { border-top: 5px solid #46667f; background: #f7fafc; }
+.repro-zone:nth-child(2) { border-top: 5px solid #557c64; background: #f8fbf8; }
+.repro-zone:nth-child(3) { border-top: 5px solid #b97e2c; background: #fffaf2; }
+.repro-zone h2 { margin: 0 0 7px; font-size: 1.06rem; }
+.repro-zone p { color: #586a74; font-size: 0.86rem; line-height: 1.4; }
+.repro-zone ul { margin: 9px 0 0 18px; }
+.repro-zone li { color: #53656e; font-size: 0.82rem; line-height: 1.35; }
+.run-fact { margin: 9px 0; padding: 9px 10px; border-left: 4px solid #557c64; background: #edf5ee; color: #486151; font-size: 0.83rem; line-height: 1.35; }
+.run-fact.alt { border-left-color: #46667f; background: #edf3f6; color: #46606f; }
+.run-fact.warn { border-left-color: #b97e2c; background: #fff3dc; color: #6d5732; }
+.case-process { display: flex; flex-direction: column; }
+.case-process small { display: block; margin-top: auto; padding-top: 8px; border-top: 1px solid #dbe3e7; color: #466554; font-size: 0.77rem; line-height: 1.3; }
+.harness-zone { display: flex; flex-direction: column; }
+.harness-contract { margin-top: auto; padding: 9px 10px; border-left: 4px solid #46667f; background: #eaf2f7; color: #435e70; font-size: 0.81rem; line-height: 1.36; }
+.harness-zone.core .harness-contract { border-left-color: #557c64; background: #eaf3eb; color: #42624d; }
+.harness-zone.archive .harness-contract { border-left-color: #b97e2c; background: #fff2da; color: #6e5830; }
+.harness-contract strong { color: inherit; }
+.stage-rule { margin: 12px 0 8px; padding: 7px 8px; border-left: 3px solid #6a8799; background: #f0f5f7; color: #4a6271; font-size: 0.77rem; line-height: 1.33; }
+.loop-stage:nth-child(2) .stage-rule, .loop-stage:nth-child(5) .stage-rule { border-left-color: #5a8168; background: #edf5ee; color: #496250; }
+.loop-stage:nth-child(3) .stage-rule, .loop-stage:nth-child(6) .stage-rule { border-left-color: #bd8735; background: #fff4df; color: #6b5732; }
+.loop-stage:nth-child(4) .stage-rule { border-left-color: #aa604b; background: #fff0ec; color: #704d42; }
+.evidence-rule { margin-top: 10px; padding: 7px 8px; border-left: 3px solid #6c8799; background: #eff4f7; color: #4a6170; font-size: 0.78rem; line-height: 1.33; }
+.evidence-card:nth-child(2) .evidence-rule { border-left-color: #557c64; background: #edf5ee; color: #486250; }
+.evidence-card:nth-child(3) .evidence-rule { border-left-color: #b97e2c; background: #fff3dc; color: #6a5630; }
+.evidence-card:nth-child(4) .evidence-rule { border-left-color: #a85b45; background: #fff0ec; color: #704d42; }
+.diagnosis-card { display: flex; flex-direction: column; }
+.diagnosis-detail { display: grid; gap: 5px; margin-top: 10px; }
+.diagnosis-detail div { padding: 6px 7px; border-left: 3px solid rgba(75, 102, 119, 0.55); background: rgba(255,255,255,0.58); color: #52656f; font-size: 0.78rem; line-height: 1.31; }
+.diagnosis-detail strong { color: #36536a; }
+.diagnosis-card small { margin-top: auto; }
+.evaluation-record { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 11px; }
+.evaluation-record div { padding: 7px 8px; border-left: 3px solid #6d8799; background: #eff4f7; color: #4d6473; font-size: 0.78rem; line-height: 1.3; }
+.evaluation-zone:nth-child(2) .evaluation-record div { border-left-color: #557c64; background: #edf5ee; color: #496250; }
+.evaluation-zone:nth-child(3) .evaluation-record div { border-left-color: #b97e2c; background: #fff3dc; color: #6a5630; }
+.evaluation-record strong { display: block; margin-bottom: 2px; color: inherit; }
+.repro-zone { display: flex; flex-direction: column; }
+.repro-tree { margin-top: auto; padding: 9px 10px; border-left: 4px solid #46667f; background: #edf3f6; color: #486170; font: 0.76rem/1.38 "Menlo", "SFMono-Regular", monospace; white-space: pre-line; }
+.repro-zone:nth-child(3) .repro-tree { border-left-color: #b97e2c; background: #fff3dc; color: #6b5630; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+/* Final report pass: key information is larger, while dense technical detail stays grouped in readable bands. */
+.research-slide .project-lede { font-size: 1.04rem; line-height: 1.5; }
+.research-slide .deck-note { font-size: 0.93rem; line-height: 1.42; }
+.research-slide .deck-checklist span { font-size: 0.86rem; line-height: 1.35; }
+.research-slide .deck-checklist small { display: block; margin-top: 4px; color: #4d6a58; font-size: 0.79rem; line-height: 1.31; }
+.research-slide .harness-zone > p { font-size: 0.91rem; line-height: 1.42; }
+.research-slide .harness-zone li { font-size: 0.87rem; line-height: 1.36; }
+.research-slide .harness-core-grid div { font-size: 0.86rem; line-height: 1.34; }
+.research-slide .loop-stage span { font-size: 0.86rem; line-height: 1.34; }
+.research-slide .loop-stage small { font-size: 0.8rem; line-height: 1.28; }
+.research-slide .evidence-card span { font-size: 0.86rem; line-height: 1.35; }
+.research-slide .evidence-card small { font-size: 0.8rem; line-height: 1.29; }
+.research-slide .gate-panel > p { font-size: 0.9rem; line-height: 1.39; }
+.research-slide .gate-list div { font-size: 0.85rem; }
+.research-slide .diagnosis-card span { font-size: 0.86rem; line-height: 1.34; }
+.research-slide .diagnosis-card small { font-size: 0.8rem; line-height: 1.28; }
+.research-slide .evaluation-zone p { font-size: 0.89rem; line-height: 1.38; }
+.research-slide .evaluation-zone li { font-size: 0.85rem; line-height: 1.33; }
+.research-slide .metric-grid div { font-size: 0.84rem; line-height: 1.3; }
+.research-slide .evaluation-detail { font-size: 0.83rem; line-height: 1.33; }
+.research-slide .repro-zone li { font-size: 0.85rem; line-height: 1.33; }
+.research-slide .run-fact { font-size: 0.86rem; line-height: 1.34; }
+.research-slide .design-conversion { font-size: 0.83rem; line-height: 1.32; }
+
+/* Keep the densest technical slides within a single 16:9 page without hiding text behind the footer. */
+#slide-deep-research-evidence-method .evidence-card { padding: 11px 11px 9px; }
+#slide-deep-research-evidence-method .evidence-card span { font-size: 0.81rem; line-height: 1.29; }
+#slide-deep-research-evidence-method .evidence-card small { padding-top: 7px; font-size: 0.76rem; line-height: 1.25; }
+#slide-deep-research-evidence-method .evidence-rule { margin-top: 7px; padding: 5px 7px; font-size: 0.74rem; line-height: 1.27; }
+#slide-deep-research-evidence-method .gate-panel { padding: 13px 12px; }
+#slide-deep-research-evidence-method .gate-list { gap: 6px; margin-top: 8px; }
+#slide-deep-research-evidence-method .gate-list div { padding: 6px 7px; font-size: 0.81rem; }
+#slide-deep-research-evidence-method .gate-score { margin-top: 11px; padding: 8px 9px; font-size: 0.76rem; line-height: 1.28; }
+#slide-deep-research-recovery .diagnosis-card { padding: 9px 9px 6px; }
+#slide-deep-research-recovery .diagnosis-card b { font-size: 0.69rem; }
+#slide-deep-research-recovery .diagnosis-card strong { margin: 3px 0; font-size: 0.91rem; }
+#slide-deep-research-recovery .diagnosis-card span { font-size: 0.78rem; line-height: 1.23; }
+#slide-deep-research-recovery .diagnosis-detail { gap: 3px; margin-top: 5px; }
+#slide-deep-research-recovery .diagnosis-detail div { padding: 3px 5px; font-size: 0.7rem; line-height: 1.18; }
+#slide-deep-research-recovery .diagnosis-card small { margin-top: 3px; padding-top: 3px; font-size: 0.71rem; line-height: 1.18; }
+#slide-deep-research-evaluation-design .evaluation-zone { padding: 11px 11px 9px; }
+#slide-deep-research-evaluation-design .evaluation-zone p { font-size: 0.85rem; line-height: 1.31; }
+#slide-deep-research-evaluation-design .evaluation-zone li { font-size: 0.81rem; line-height: 1.27; }
+#slide-deep-research-evaluation-design .evaluation-record { gap: 5px; margin-top: 8px; }
+#slide-deep-research-evaluation-design .evaluation-record div { padding: 5px 6px; font-size: 0.71rem; line-height: 1.24; }
+#slide-deep-research-evaluation-design .metric-grid { gap: 6px; margin-top: 8px; }
+#slide-deep-research-evaluation-design .metric-grid div { padding: 6px 7px; font-size: 0.78rem; line-height: 1.25; }
+#slide-deep-research-evaluation-design .evaluation-detail { margin-top: 8px; padding: 7px 8px; font-size: 0.74rem; line-height: 1.25; }
+
+/* Design rationale and innovation slides: keep the argument readable at 16:9 without relying on clipped text. */
+.research-slide > :not(.slide-number) { min-width: 0; }
+.research-slide :is(p, span, small, li, code) { overflow-wrap: anywhere; }
+.slide-number { z-index: 10; padding: 1px 4px; background: rgba(255, 255, 255, 0.94); }
+.prior-work-grid,
+.innovation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; flex: 1; min-height: 0; }
+.prior-work-card,
+.innovation-card { display: flex; flex-direction: column; min-width: 0; min-height: 0; padding: 13px 14px 11px; border: 1px solid #cbd7de; border-top: 5px solid #46667f; background: #fbfcfd; }
+.prior-work-card:nth-child(2),
+.innovation-card:nth-child(2) { border-top-color: #557c64; background: #f8fbf8; }
+.prior-work-card:nth-child(3),
+.innovation-card:nth-child(3) { border-top-color: #b97e2c; background: #fffaf2; }
+.prior-work-card:nth-child(4),
+.innovation-card:nth-child(4) { border-top-color: #a85b45; background: #fff8f6; }
+.prior-work-card b,
+.prior-work-card strong,
+.prior-work-card span,
+.innovation-card b,
+.innovation-card strong,
+.innovation-card span { display: block; }
+.prior-work-card > b,
+.innovation-card > b { color: #648095; font: 700 0.72rem "Menlo", monospace; letter-spacing: 0.45px; }
+.prior-work-card strong,
+.innovation-card strong { margin: 5px 0; color: #2d4b5e; font-size: 1rem; line-height: 1.28; }
+.prior-work-card > span,
+.innovation-card > span { color: #596b75; font-size: 0.84rem; line-height: 1.38; }
+.experience-transfer,
+.innovation-proof { margin-top: auto; padding: 8px 9px; border-left: 4px solid #46667f; background: rgba(237, 243, 246, 0.82); }
+.experience-transfer b,
+.innovation-proof b { color: #36536a; font-size: 0.72rem; }
+.experience-transfer span,
+.innovation-proof span { margin-top: 3px; color: #4b626f; font-size: 0.78rem; line-height: 1.33; }
+.prior-work-card:nth-child(2) .experience-transfer,
+.innovation-card:nth-child(2) .innovation-proof { border-left-color: #557c64; background: #edf5ee; }
+.prior-work-card:nth-child(2) .experience-transfer b,
+.prior-work-card:nth-child(2) .experience-transfer span,
+.innovation-card:nth-child(2) .innovation-proof b,
+.innovation-card:nth-child(2) .innovation-proof span { color: #40614d; }
+.prior-work-card:nth-child(3) .experience-transfer,
+.innovation-card:nth-child(3) .innovation-proof { border-left-color: #b97e2c; background: #fff4df; }
+.prior-work-card:nth-child(3) .experience-transfer b,
+.prior-work-card:nth-child(3) .experience-transfer span,
+.innovation-card:nth-child(3) .innovation-proof b,
+.innovation-card:nth-child(3) .innovation-proof span { color: #6b5630; }
+.prior-work-card:nth-child(4) .experience-transfer,
+.innovation-card:nth-child(4) .innovation-proof { border-left-color: #a85b45; background: #fff0ec; }
+.prior-work-card:nth-child(4) .experience-transfer b,
+.prior-work-card:nth-child(4) .experience-transfer span,
+.innovation-card:nth-child(4) .innovation-proof b,
+.innovation-card:nth-child(4) .innovation-proof span { color: #704d42; }
+.innovation-card strong { font-size: 1.03rem; }
+.innovation-card > span { font-size: 0.85rem; }
+#slide-deep-research-prior-work .project-lede,
+#slide-deep-research-innovation .project-lede { margin-bottom: 9px; }
+#slide-deep-research-prior-work .deck-note,
+#slide-deep-research-innovation .deck-note { margin-top: 9px; }
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html, body {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+  .slide {
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 0;
+    box-shadow: none;
+    width: 13.333in !important;
+    height: 7.5in !important;
+    overflow: hidden;
+  }
+  .slide:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page {
+    size: 13.333in 7.5in;
+    margin: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide title-slide">
+  <div class="author-name">苏渤涵<br><span style="font-size: 2rem; font-weight: 400;">Bohan Su</span></div>
+  <div class="author-title">
+    大模型推理 · 结构化表示 · 推理增强<br>
+    <em style="font-size: 1.1rem;">LLM Reasoning · Structured Representation · Reasoning Enhancement</em>
+  </div>
+  <div class="author-info">
+    武汉大学 软件工程 · Wuhan University, Software Engineering<br>
+    GPA: 3.74/4.0 · Ranking: Top 25%<br>
+    Email: 2023302143001@whu.edu.cn · GitHub: github.com/BohanSu
+  </div>
+  <div class="slide-number">1</div>
+</div>
+
+<!-- Slide 2: Research Interests -->
+<div class="slide" id="slide-interests">
+  <h1>Research Interests</h1>
+  <div class="info-box">
+    <h2>Research Direction</h2>
+    <p style="font-size: 1.08rem; margin: 10px 0; font-weight: 500; line-height: 1.7;">研究兴趣是大模型推理与机器学习，关注如何用结构化表示与推理增强提升模型在计算机视觉和科学问题解决中的理解、泛化与可验证性。</p>
+  </div>
+  <div class="interest-grid">
+    <div class="interest-card">
+      <h2>Structured Representation</h2>
+      <p>关注把图像、文本与推理过程中的关键信息抽取为稳定中间结构，如几何关系、语义单元、关系图与约束空间，以提升表示质量、任务迁移能力和分析可解释性。</p>
+    </div>
+    <div class="interest-card">
+      <h2>Computer Vision</h2>
+      <p>关注复杂场景下的视觉理解与实例辨识，希望把结构先验、跨模态信息和学习机制结合起来，提升模型在遮挡、外观变化与开放环境中的鲁棒性和泛化能力。</p>
+    </div>
+    <div class="interest-card">
+      <h2>Reasoning Enhancement</h2>
+      <p>关注让模型在多步推理与科学问题求解中具备更清晰的中间过程和验证路径，希望结合结构约束、外部工具与反馈机制，提升推理质量、结果可信度和知识复用能力。</p>
+    </div>
+  </div>
+  <div class="highlight" style="margin-top: 18px;">
+    <strong>Research Goal:</strong> 在视觉理解与科学问题求解中，把结构化表示、学习机制与推理增强结合起来，形成更稳定、可验证、可迁移的智能系统。
+  </div>
+  <div class="slide-number">2</div>
+</div>
+
+<!-- Slide 3: Education -->
+<div class="slide">
+  <h1>Education &amp; Academic Background</h1>
+  <div class="two-col">
+    <div>
+      <h2>Education</h2>
+      <table class="info-table">
+        <tr><td>Institution</td><td>武汉大学 (Wuhan University)</td></tr>
+        <tr><td>Degree</td><td>B.Eng. in Software Engineering</td></tr>
+        <tr><td>Duration</td><td>Sep 2023 - Jun 2027 (Expected)</td></tr>
+        <tr><td>GPA</td><td>3.74/4.0, Ranking: Top 25%</td></tr>
+        <tr><td>Language</td><td>CET-6: 506, CET-4: 595</td></tr>
+      </table>
+      <h2 style="margin-top: 20px;">Relevant Coursework</h2>
+      <p style="font-size: 0.95rem; line-height: 1.7;">
+        <strong>Core CS:</strong> Computer Vision, AI Frontiers, Operating Systems, Computer Networks,
+        Database Systems, Software Engineering, Software Quality Assurance, Object-Oriented Programming
+      </p>
+      <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 8px;">
+        <strong>Math &amp; Theory:</strong> Linear Algebra, Probability &amp; Statistics, Discrete Mathematics, Data Structures &amp; Algorithms
+      </p>
+    </div>
+    <div>
+      <h2>Online Learning</h2>
+      <div class="info-box">
+        <strong style="font-size: 1rem;">Machine Learning for Computer Vision</strong><br>
+        <em>University of Oxford, Instructor: Jens Rittscher</em><br>
+        Score: 93.10/100<br>
+        <p style="font-size: 0.9rem; margin-top: 6px; color: #555;">系统学习视觉任务中的表征学习、模型评估、误差分析和实验设计方法，为后续ReID研究提供坚实基础。</p>
+      </div>
+      <h2 style="margin-top: 18px;">Research Skills</h2>
+      <ul style="font-size: 0.9rem;">
+        <li>English academic writing and technical communication</li>
+        <li>Multi-dataset evaluation and ablation study design</li>
+        <li>Training management and result attribution</li>
+        <li>Experimental protocol design and reproducibility</li>
+        <li>Literature review and survey organization</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">3</div>
+</div>
+
+<!-- Slide 4: Research I -->
+<div class="slide">
+  <h1>Research I: Universal Person Re-Identification</h1>
+  <p class="publication-meta">Reliability-Aware 3D Geometric Injection for Universal Person Re-identification · First Author · ECCV 2026 Accept</p>
+  <div class="two-col">
+    <div>
+      <h2>Problem &amp; Motivation</h2>
+      <p style="font-size: 1rem; margin: 8px 0; line-height: 1.7;">遮挡、换装与跨模态使外观线索失稳，单纯依赖2D视觉特征难以在复杂场景下保持识别稳定性。现有方法缺少外观无关的辅助线索。</p>
+      <h2>Method</h2>
+      <ul style="font-size: 0.95rem;">
+        <li><strong>UniGeo Framework:</strong> 将SMPL人体参数解耦为全局体型（shape parameters）与关节拓扑结构（joint topology），作为外观无关的几何先验注入ReID表征学习</li>
+        <li><strong>Reliability-Aware Gate:</strong> 设计置信度门控机制，根据几何估计的可靠性动态融合2D视觉表征与3D结构表征，降低低置信几何估计对识别特征的干扰，保持对现有backbone的轻量适配</li>
+      </ul>
+      <h2>Experiments &amp; Results</h2>
+      <ul style="font-size: 0.95rem;">
+        <li>在Market-1501、MSMT17、CUHK03等9个ReID benchmark上完成统一协议下的对比实验</li>
+        <li>设计完整的消融实验验证UniGeo各组件的有效性</li>
+        <li>图像扰动稳定性实验分析3D几何注入在遮挡、换装和跨模态场景下的收益边界</li>
+        <li>实验表明该方法在保持轻量化的同时，在复杂外观变化场景下显著提升识别稳定性</li>
+      </ul>
+    </div>
+    <div>
+      <div class="method-fig">
+        <img src="assets/Unigeo.png" alt="UniGeo Method">
+        <div class="caption">Figure 1: UniGeo Framework Architecture</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">4</div>
+</div>
+
+<!-- Slide 5: Research II -->
+<div class="slide" id="slide-pearl">
+  <h1>Research II: Scientific Reasoning Graph Extraction</h1>
+  <p class="publication-meta">PEARL: Auditable Repair for Scientific Reasoning Graph Extraction · First Author · WAICA 2026 Workshop -&gt; AAAI (In Preparation)</p>
+  <div class="two-col">
+    <div>
+      <h2>Problem &amp; Motivation</h2>
+      <p style="font-size: 0.97rem; margin: 8px 0; line-height: 1.62;">目标是把论文中的观察、证据、中间结论和最终结论组织成推理图。问题在于，LLM 生成的图往往格式不稳定、关系类型混乱、根节点方向错误，难以直接用于后续分析与复用。</p>
+      <h2>Method: Materialization, Repair, and Audit</h2>
+      <ul style="font-size: 0.92rem;">
+        <li><strong>先规范化：</strong>把原始输出整理成统一图结构，修复格式、端点和根节点等结构问题。</li>
+        <li><strong>再局部修复：</strong>结合评测反馈，只修正被判错的关系、推理单元和最终结论，而不是整图重写。</li>
+        <li><strong>最后严格验收：</strong>只有通过统一标准的图才被保留，其余样本保留失败类型和审计记录。</li>
+      </ul>
+      <h2>Results &amp; Contribution</h2>
+      <p style="font-size: 0.92rem; line-height: 1.6;">在五个 ARCHE 模型档案、共 350 篇论文样本上，strict pass 从 <strong>0/350</strong> 提升到 <strong>300/350</strong>，平均 <strong>EC</strong> 从 <strong>0.827</strong> 提升到 <strong>0.896</strong>，平均 <strong>REA</strong> 从 <strong>0.339</strong> 提升到 <strong>0.906</strong>。其中，<strong>EC</strong> 的官方定义是 <strong>content grounding / entity coverage</strong>，衡量图中节点内容是否被论文证据充分覆盖；<strong>REA</strong> 的官方定义是 <strong>reasoning edge accuracy</strong>，衡量推理边及其指向关系是否判断正确。整体上，这项工作把“看起来像图”的输出，变成了可检查、可追踪、可复用的推理图结果。</p>
+    </div>
+    <div>
+      <div class="method-fig">
+        <img src="assets/PEARL_workshop.png" alt="PEARL Method">
+        <div class="caption">Figure 2: PEARL framework overview from materialization to strict semantic closure</div>
+      </div>
+      <div class="highlight" style="margin-top: 14px; font-size: 0.92rem; line-height: 1.58;">
+        <strong>Evaluation Standard:</strong> 只有当图里的关键内容被完整抽出，并且推理关系也连对时，图才会被接收；否则保留失败类型与修复轨迹，便于继续分析。
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">5</div>
+</div>
+
+<!-- Slide 6: Research III -->
+<div class="slide" id="slide-survey">
+  <h1>Research III: Survey on Appearance Variations in ReID</h1>
+  <p class="publication-meta">Appearance Variations in Person Re-Identification: A Survey · Student First Author · TPAMI (In Preparation)</p>
+  <div class="two-col">
+    <div>
+      <h2>Problem Reframing</h2>
+      <ul>
+        <li>不再只把 ReID 看成“跨镜头匹配”，而是统一放到 appearance variation 问题下讨论。</li>
+        <li>把外观变化分为三类：短期观测扰动、长期外观演化、复合变化耦合。</li>
+        <li>进一步细分结构几何、光谱环境、信息缺失、衣着状态、非衣着外观漂移与部署分布演化等子问题。</li>
+      </ul>
+      <h2>Methodology Framework</h2>
+      <ul>
+        <li>用 robustness 与 generalization 两条主线重组现有方法，而不是按单一 benchmark 罗列。</li>
+        <li>对应方法涵盖 invariant representation、generative augmentation 与 domain generalization / adaptation。</li>
+        <li>同时把 VLM、causal intervention 与 lifelong adaptation 纳入统一讨论框架。</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Benchmark &amp; Evaluation</h2>
+      <table class="info-table" style="font-size: 0.95rem;">
+        <tr><td>短期基准</td><td>如 Market-1501、MSMT17、Occluded-Duke、SYSU-MM01、MARS，核心评估观测扰动下的鲁棒性。</td></tr>
+        <tr><td>长期基准</td><td>如 PRCC、LTCC、DeepChange、CCVID、MEVID、CCPG，核心评估换装与长期重现下的身份保持。</td></tr>
+        <tr><td>复合基准</td><td>如 OC4-ReID、CMCC-ReID、MP-ReID、AG-VPReID、CHIRLA，核心评估多种变化同时出现时的泛化能力。</td></tr>
+      </table>
+      <h2 style="margin-top: 18px;">Contribution</h2>
+      <ul style="font-size: 0.95rem;">
+        <li>把短期、长期和复合变化放进同一 taxonomy 中，明确不同 failure mode 的边界。</li>
+        <li>强调 benchmark 不是结果附录，而是问题定义本身。</li>
+        <li>讨论 Rank-k / mAP 在长期场景下的局限，并提出更结构化的评测视角。</li>
+        <li>形成后续鲁棒表征研究的概念坐标与评测依据。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">6</div>
+</div>
+
+<!-- Slide 7: Ongoing Research -->
+<div class="slide" id="slide-ongoing">
+  <h1>Ongoing Research</h1>
+  <div class="info-box">
+    <h2>Current Lines</h2>
+    <p style="font-size: 1rem; margin: 8px 0; line-height: 1.7;">围绕视觉实例辨识研究线，正在推进统一评测、方法扩展与更一般化的实例辨识设定。</p>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-badge">ONGOING 01</div>
+      <h2>Full-Scenario Evaluation Pipeline</h2>
+      <p>正在搭建一个面向复杂视觉辨识任务的全场景测评库，并围绕统一 backbone 推进批量化方法测试与结果整合。</p>
+      <ul>
+        <li>构建覆盖多类场景变化与任务设定的全场景测评库</li>
+        <li>搭建一个大模型 backbone，作为统一测试与扩展的实验底座</li>
+        <li>批量进行方法测试、结果汇总与对比分析</li>
+      </ul>
+      <div class="work-footer">作用：形成可复用的评测与分析基础设施，支撑后续方法筛选、比较与迭代。</div>
+    </div>
+    <div class="work-card">
+      <div class="work-badge">ONGOING 02</div>
+      <h2>ECCV Extension of UniGeo</h2>
+      <p>基于 UniGeo 的 ECCV 工作继续补充分析和扩展，形成更完整的后续版本。</p>
+      <ul>
+        <li>补充更强设定、更多分析与更统一的叙事主线</li>
+        <li>补充鲁棒性、失败案例与跨设定一致性分析</li>
+        <li>从单篇方法论文走向持续性的研究线索</li>
+      </ul>
+      <div class="work-footer">目标：从“一个有效方法”推进到“一个更完整的研究框架”。</div>
+    </div>
+    <div class="work-card">
+      <div class="work-badge">ONGOING 03</div>
+      <h2>Category-Agnostic ReID Foundation</h2>
+      <p>在结构先验与统一协议基础上，继续推进类别无关视觉辨识基座。</p>
+      <ul>
+        <li>从 person-specific 任务走向更一般的实例辨识设定</li>
+        <li>关注跨类别、跨场景变化下表征是否仍然稳定</li>
+        <li>沉淀更可迁移的 backbone、protocol 与 analysis framework</li>
+      </ul>
+      <div class="work-footer">目标：把 ReID 从单任务方法推进为更统一的视觉表征基础问题。</div>
+    </div>
+  </div>
+  <div class="slide-number">7</div>
+</div>
+
+<!-- Slide 8: Engineering Projects -->
+<div class="slide">
+  <h1>Engineering Projects &amp; Competitions</h1>
+  <div class="research-item">
+    <div class="research-title">模块化机器人系统开发 (Modular Robot System)</div>
+    <div class="publication-meta">National First Prize (Top 6), IoT Design Competition · Nov 2023 - Aug 2025</div>
+    <p style="font-size: 0.95rem; line-height: 1.6;">面向少儿编程教育场景，参与模块化智能硬件系统和二总线供电通信一体化平台的软件架构设计；负责模块协同、总线仲裁、热插拔识别与总线合并等底层控制逻辑；参与通信协议、嵌入式驱动与系统联调，配合完成三轮PCB迭代、24V工业环境适配和长时间运行测试。<strong>实测通信成功率达98.5%，通信效率较原方案提升约40%。</strong></p>
+  </div>
+  <div class="two-col" style="margin-top: 12px;">
+    <div>
+      <div class="research-item">
+        <div class="research-title">A4R引导式手机AI助手</div>
+        <div class="publication-meta">National Second Prize, Youth Innovation Competition · May - Aug 2025</div>
+        <p style="font-size: 0.95rem; line-height: 1.6;">针对手机智能体在模糊需求场景下缺少主动澄清机制的问题，参与设计A4R（Ask for Refine）引导式交互方案，将"先执行"改为"先澄清、再执行、再验证"；构建150余条真实交互样本，覆盖6大领域16款应用。<strong>A4R完成率64.68%，跳步率31.69%，有效引导率72.33%。</strong></p>
+      </div>
+      <div class="research-item">
+        <div class="research-title">A2A协议多智能体系统</div>
+        <div class="publication-meta">Shanghai AI Academy, Autumn Camp · Nov 2025</div>
+        <p style="font-size: 0.95rem; line-height: 1.6;">基于Holos平台与A2A协议（v0.3.0）完成多智能体系统开发；引入GuideAgent将模糊需求转化为确定性任务；完成A2A JSON-RPC接口适配、SSE流式响应、任务指纹去重、LLM/规则双轨降级和多Agent日志调试。</p>
+      </div>
+    </div>
+    <div>
+      <div class="research-item">
+        <div class="research-title">小米四足机器人物流配送系统</div>
+        <div class="publication-meta">National Third Prize, Xiaomi Cup · Mar - Aug 2025</div>
+        <p style="font-size: 0.95rem; line-height: 1.6;">围绕"复杂环境下的智能物流配送"赛题，基于小米四足开发平台完成参赛系统开发；参与系统方案设计、算法调试、任务流程优化与现场测试，重点支撑各阶段之间的状态切换和动作时序衔接。</p>
+      </div>
+      <div class="research-item">
+        <div class="research-title">Smartphone Battery Modeling</div>
+        <div class="publication-meta">MCM Finalist Award · Jan - Feb 2026</div>
+        <p style="font-size: 0.95rem; line-height: 1.6;">2026年MCM A题：建立统一物理层，并行构建2RC等效电路模型+扩展卡尔曼滤波（ECM-EKF）与PINN双分支求解器；在8类异构数据源、超过12万个时间步上验证。<strong>PINN的SOC RMSE降至1.24%，整体TTE预测MAPE达8.7%。</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8</div>
+</div>
+
+<!-- Slide 9: Skills & Competencies -->
+<div class="slide" id="slide-skills">
+  <h1>Skills &amp; Competencies</h1>
+  <div class="three-col">
+    <div>
+      <h2>Research</h2>
+      <ul>
+        <li>Person Re-Identification</li>
+        <li>SMPL &amp; 3D Structure Priors</li>
+        <li>3D Gaussian Splatting</li>
+        <li>Scientific Reasoning Graphs</li>
+        <li>Multi-dataset Evaluation</li>
+        <li>Ablation Study Design</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Engineering</h2>
+      <ul>
+        <li>Python, C/C++, Java</li>
+        <li>Git, MATLAB</li>
+        <li>RISC-V / ESP32</li>
+        <li>Embedded Protocols</li>
+        <li>System Integration</li>
+      </ul>
+    </div>
+    <div>
+      <h2>LLM Systems</h2>
+      <ul>
+        <li>Multi-Agent Orchestration</li>
+        <li>Task Routing &amp; Validation</li>
+        <li>GPT / Claude / Gemini API</li>
+        <li>Structured Output</li>
+        <li>Observability &amp; Debugging</li>
+      </ul>
+    </div>
+  </div>
+  <h2 style="margin-top: 14px;">Honors &amp; Awards</h2>
+  <div class="two-col">
+    <div>
+      <p style="font-size: 0.95rem; font-weight: 600; margin-bottom: 8px;">Competitions</p>
+      <ul style="font-size: 0.85rem;">
+        <li>2025 全国大学生物联网设计大赛（华为杯）<strong>全国一等奖 (Top 6)</strong></li>
+        <li>2024 全国大学生物联网设计大赛华中及西南分赛区 <strong>一等奖</strong></li>
+        <li>2025 中国青年科技创新揭榜挂帅擂台赛 <strong>全国二等奖</strong></li>
+        <li style="white-space: nowrap;">2025 全国大学生计算机系统能力大赛智能系统创新设计赛（小米杯）<strong>全国三等奖</strong></li>
+        <li>2026 第十九届全国大学生软件创新大赛华南区域赛 <strong>三等奖</strong></li>
+        <li>2026 美国大学生数学建模竞赛 <strong>Finalist</strong></li>
+        <li>2025 美国大学生数学建模竞赛 <strong>Honorable Mention</strong></li>
+        <li>2025 全国大学生数学建模竞赛湖北赛区 <strong>二等奖</strong></li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size: 0.95rem; font-weight: 600; margin-bottom: 8px;">Scholarships &amp; Honors</p>
+      <ul style="font-size: 0.85rem;">
+        <li>2025 武汉大学 <strong>郑格如一等奖学金</strong></li>
+        <li>2025, 2024 武汉大学 <strong>甲等奖学金</strong></li>
+        <li>2025, 2024 武汉大学 <strong>三好学生</strong></li>
+        <li>2025 武汉大学 <strong>优秀学生干部</strong></li>
+        <li>2025 武汉大学大学生课外学术科技创新创业竞赛 <strong>先进个人</strong></li>
+        <li>2025 武汉大学 <strong>先进团支部负责人</strong></li>
+        <li>2024 武汉大学未来学院 <strong>优秀学员</strong></li>
+        <li>2025 武汉大学阳光体育 <strong>先进个人</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">9</div>
+</div>
+
+<!-- Slide 10: Course goal -->
+<div class="slide research-slide" id="slide-deep-research-title">
+  <h1>课题要求与交付：把 Simple Agent 扩展为可复现的 Deep Research Harness</h1>
+  <div class="deck-grid-two">
+    <section class="deck-card">
+      <div class="deck-eyebrow">FROM SIMPLE AGENT TO RESEARCH HARNESS</div>
+      <h2>把一次工具调用扩展成可检查、可恢复的研究任务</h2>
+      <p>基础 Agent 能回答问题和调用工具；长程调研还必须知道当前要验证什么、材料是否重复或冲突、下一步该补哪一类来源，以及中断后如何从一致状态继续。本项目把这些跨轮次控制逻辑放入 Harness，并把每一步保存为可核对记录。</p>
+      <div class="outcome-route">
+        <article><b>01 任务解析</b><strong>答案目标与完成条件</strong><span>把宽泛问题拆成必须回答的目标、子问题和“何时算完成”。</span></article>
+        <article><b>02 动态检索</b><strong>查询、网页与多跳线索</strong><span>依据当前缺口生成查询，去掉重复，按来源和页面预算读取材料。</span></article>
+        <article><b>03 证据判断</b><strong>去重、冲突与引用</strong><span>保留原文定位，合并转载材料，处理相反说法，再绑定到具体回答句。</span></article>
+        <article><b>04 交付与评测</b><strong>答案、过程、指标与恢复</strong><span>交付直接回答，同时保存运行轨迹、用量、评分、失败原因与恢复位置。</span></article>
+      </div>
+    </section>
+    <aside class="deck-checklist">
+      <article><i>1</i><div><strong>Deep Research 流程</strong><span>实现任务分解、查询改写、多跳收集、来源判断、冲突处理与带引用回答。</span><small>验收材料：研究计划、查询批次、来源账本、逐句引用核验。</small></div></article>
+      <article><i>2</i><div><strong>Agent Harness 架构</strong><span>在 Simple Agent 之外增加问题解析、工具边界、失败重试、状态记录和预算控制。</span><small>验收材料：ResearchEngine、角色接口、操作账本、checkpoint。</small></div></article>
+      <article><i>3</i><div><strong>长程任务可观测</strong><span>保存查询、页面、证据、模型调用、中间结论和错误原因，支持恢复与归因。</span><small>验收材料：SQLite、JSONL 事件、内容快照、恢复审计。</small></div></article>
+      <article><i>4</i><div><strong>端到端效果测试</strong><span>按任务完成、答案、证据、引用、工具效率、成本、时延和失败类型生成实验记录。</span><small>验收材料：JSONL 评测器、EvaluationRecord、运行目录和报告。</small></div></article>
+    </aside>
+  </div>
+  <div class="deck-note"><strong>提交形态：</strong>代码、设计文档、配置、评测脚本、运行记录和 Demo 前端使用同一份运行模型。答案需要能读懂，材料需要能回看，执行需要能复现，失败需要能定位；不使用一个无法解释的总分代替过程证据。</div>
+  <div class="slide-number">10</div>
+</div>
+
+<!-- Slide 11: Design references -->
+<div class="slide research-slide" id="slide-deep-research-references">
+  <h1>设计依据：用四类参考工作确定“研究、执行、评测、工程”四个重点</h1>
+  <p class="project-lede">参考材料各自解决不同问题：基准告诉我们要测什么，工程框架提示 Harness 应保留哪些状态和接口。它们用于指导设计，不被包装成当前运行时已经依赖的组件。</p>
+  <div class="reference-grid">
+    <article class="reference-card"><b>BENCHMARK</b><strong>BrowseComp</strong><span>把网页浏览、长链路检索和最终答案正确性放在同一任务中考察。它指导本项目记录查询路线、页面读取和证据覆盖，而不只保留最终文字。</span><small><em>BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents</em><br>用于正式长程浏览评测的候选数据集。</small></article>
+    <article class="reference-card"><b>BENCHMARK</b><strong>GAIA</strong><span>关注通用助手在多步骤、多工具任务中的完成能力。它提醒评测需要同时看任务完成、工具调用、运行时间和失败类型。</span><small><em>GAIA: a benchmark for General AI Assistants</em><br>用于多工具与复杂任务的候选数据集。</small></article>
+    <article class="reference-card"><b>IMPLEMENTATION REFERENCE</b><strong>ApodexAI / AgentHarness</strong><span>参考“基础 Agent 外再提供运行控制层”的思路，将任务状态、工具轨迹、评测和诊断从单次模型调用中分离出来。</span><small><code>github.com/ApodexAI/AgentHarness</code><br>帮助界定 Harness 的职责边界。</small></article>
+    <article class="reference-card"><b>IMPLEMENTATION REFERENCE</b><strong>LangChain / deepagents</strong><span>参考深度 Agent 的计划、子任务和长期执行思想；当前项目仍使用显式状态机，便于检查每一次外部调用和恢复路径。</span><small><code>github.com/langchain-ai/deepagents</code><br>用于比较编排设计，不作为当前依赖宣称。</small></article>
+  </div>
+  <div class="deck-note"><strong>设计取向：</strong>先用确定性数据结构保存研究过程，再让模型承担规划、检索策略、证据整理和写作等需要语言理解的工作。这样才能对每个结论的来源和每次失败的原因进行复核。</div>
+  <div class="slide-number">11</div>
+</div>
+
+<!-- Slide 12: Design basis from prior work -->
+<div class="slide research-slide" id="slide-deep-research-prior-work">
+  <h1>从既有工作反推系统设计：四个反复出现的工程问题</h1>
+  <p class="project-lede">这个 Harness 不是从框架模板开始拼装，而是把此前研究和系统开发中已经遇到的失效模式，转成可执行的运行规则。参考文献用于校验方向；下面四项经历说明每条规则为什么必要。</p>
+  <div class="prior-work-grid">
+    <article class="prior-work-card"><b>RESEARCH 01 · UNIGEO / REID SURVEY</b><strong>不是所有输入都应被同等使用</strong><span>在 ReID 中，3D 结构能补充外观，但估计失真时也会干扰检索；综述工作进一步表明，换装、遮挡、跨域等条件会改变结论是否成立。</span><div class="experience-transfer"><b>转化为 Harness 规则</b><span>每个回答目标分别检查原文、独立来源、定位、反证和冲突；材料不足时只补对应缺口，不能把“找到更多页面”当成结论已经可靠。</span></div></article>
+    <article class="prior-work-card"><b>RESEARCH 02 · PEARL 推理图修复</b><strong>生成结果要先落成产物，再做局部修复</strong><span>PEARL 不能依赖一次生成得到正确推理图，而是将结果物化、检查、定位错误并只修复问题部分，最后保留审计记录。</span><div class="experience-transfer"><b>转化为 Harness 规则</b><span>计划、查询批次、页面快照、证据账本和答案都是版本化产物；引用或证据出错时回到具体目标修复，而不是让整轮研究从头再来。</span></div></article>
+    <article class="prior-work-card"><b>ENGINEERING 01 · A4R / A2A 多 Agent</b><strong>模糊需求和角色协作都需要明确责任</strong><span>A4R 的“先澄清、再执行、再验证”和 A2A 开发中的任务指纹、流式日志、降级路径都说明：只画出角色连线并不能说明任务真的被完成。</span><div class="experience-transfer"><b>转化为 Harness 规则</b><span>先把问题拆成可验收的 AnswerSlot；角色交接同时保存交付物和真实接收记录，幂等键、调用账本与错误原因让重复执行和异常接管可追踪。</span></div></article>
+    <article class="prior-work-card"><b>ENGINEERING 02 · ROBOT / EVALUATION PIPELINE</b><strong>长流程靠状态、恢复和对照实验稳定下来</strong><span>机器人系统联调需要管理动作时序和状态切换；视觉全场景评测需要冻结条件、保留失败样本，不能只保留一个最终分数。</span><div class="experience-transfer"><b>转化为 Harness 规则</b><span>运行采用显式状态机和 checkpoint；每题独立留档，恢复、模型用量、工具效率与失败类型和答案一起进入评测记录。</span></div></article>
+  </div>
+  <div class="deck-note"><strong>设计链条：</strong>不稳定信息要有使用条件，生成结果要能局部修复，协作要能追到真实执行，长流程要能恢复和对照评测。这四条经验共同决定了本项目的证据账本、交接记录、定向修复和运行档案设计。</div>
+  <div class="slide-number">12</div>
+</div>
+
+<!-- Slide 13: Engineering innovations -->
+<div class="slide research-slide" id="slide-deep-research-innovation">
+  <h1>工程创新点：让长程研究过程可交付、可核对、可接续</h1>
+  <p class="project-lede">创新不在于堆叠更多 Agent 名称，而在于把深度研究中最容易失真的四个环节变成有明确数据结构、运行记录和前端查验入口的能力。</p>
+  <div class="innovation-grid">
+    <article class="innovation-card"><b>INNOVATION 01 · 目标驱动的证据闭环</b><strong>用“必须回答什么”管理检索，而不是累计资料数量</strong><span><code>ResearchPlan</code> 把问题拆为 <code>AnswerSlot</code>。每个目标单独检查原文支持、独立来源、可定位性、反证和冲突；缺哪一项，就生成哪一种补查任务。</span><div class="innovation-proof"><b>可查实现</b><span>计划版本、目标状态、<code>ClosureReport</code>、证据账本和逐句引用都保存在同一 <code>run_id</code> 下。</span></div></article>
+    <article class="innovation-card"><b>INNOVATION 02 · 区分“交出”和“接收”的协作记录</b><strong>角色间的箭头不再默认代表任务已经完成</strong><span>交接先保存谁交给谁、交付什么；阶段产物以规范化 JSON 和校验值留档；只有后续调用实际引用该交接编号后，系统才写入接收记录。</span><div class="innovation-proof"><b>可查实现</b><span><code>HandoffEnvelope</code>、<code>ArtifactRef</code>、<code>HandoffReceipt</code> 与调用账本可回看同一次协作。</span></div></article>
+    <article class="innovation-card"><b>INNOVATION 03 · 证据还不够时仍有可用回答</b><strong>不让用户看到空白，也不把推测写成结论</strong><span>系统先交付附件或已保存材料能够直接支持的解释，并把还需要核对的来源、反例、场景验证或引用检查写成可继续执行的任务。</span><div class="innovation-proof"><b>可查实现</b><span>最终回答、证据范围、仍需核对的问题、继续检索路线和恢复点并列展示，用户可继续研究而不是重新提问。</span></div></article>
+    <article class="innovation-card"><b>INNOVATION 04 · 多模态观察与外部结论分层保存</b><strong>图片说明“图里有什么”，文献说明“结论能否推广”</strong><span>附件先保存内容身份，再由感知角色生成带位置的观察；这些观察可以解释模型结构，但不能替代针对普适效果、限制条件和反例的外部检索。</span><div class="innovation-proof"><b>可查实现</b><span>原始附件、内容哈希、区域观察、来源快照和引用绑定在运行页分层呈现，避免一张图被误写成普适证据。</span></div></article>
+  </div>
+  <div class="deck-note"><strong>创新定位：</strong>以上是面向 Deep Research 课程课题的系统与工程创新，不宣称提出新的基础模型、替代标准协议或已经取得官方基准 SOTA。它们的价值在于每项都能由代码、运行记录和前端材料复核。</div>
+  <div class="slide-number">13</div>
+</div>
+
+<!-- Slide 14: Harness architecture -->
+<div class="slide research-slide" id="slide-deep-research-harness">
+  <h1>Harness 总体架构：基础 Agent 通过稳定接口进入可持续的研究运行时</h1>
+  <p class="project-lede">Simple Agent 负责局部的模型推理与工具决策；Harness 负责跨轮次的状态、证据、重试、预算、评测和留档。两者通过稳定的模型与工具接口连接。</p>
+  <div class="harness-layout">
+    <section class="harness-zone base">
+      <div class="deck-eyebrow">AGENT BACKEND</div>
+      <h2>基础 Agent</h2>
+      <p>基础 Agent 只完成一个局部步骤：根据给定上下文调用模型或工具，并返回结构化结果。</p>
+      <ul>
+        <li><code>ModelProvider</code>：规划、查询、抽取、写作、核验。</li>
+        <li><code>SearchProvider</code>：搜索、抓取和页面结果。</li>
+        <li>格式校验、局部错误和原始响应。</li>
+      </ul>
+      <div class="harness-contract"><strong>接入契约：</strong>问题或阶段产物进入，结构化结果或可诊断错误返回；不要求给定框架重写内部实现。</div>
+    </section>
+    <section class="harness-zone core">
+      <div class="deck-eyebrow">DEEP RESEARCH HARNESS</div>
+      <h2>六类新增控制能力</h2>
+      <p>Harness 让每个局部调用进入同一个可持续运行的研究任务，并把结果变成下一轮可以使用的结构化输入。</p>
+      <div class="harness-core-grid">
+        <div><strong>问题解析</strong><br><code>ResearchPlan</code>、子问题、答案目标和完成条件。</div>
+        <div><strong>状态机</strong><br><code>ResearchEngine</code> 路由、阶段版本、幂等键和 checkpoint。</div>
+        <div><strong>工具运行</strong><br>搜索、抓取、缓存、预算和每次调用记录。</div>
+        <div><strong>证据账本</strong><br><code>EvidenceLedger</code> 记录原文、来源、去重、冲突和引用。</div>
+        <div><strong>恢复与诊断</strong><br>错误分类、定向修复、暂停、接管和继续执行。</div>
+        <div><strong>评测与报告</strong><br><code>EvaluationRecord</code>、题目级结果、用量时延和复现材料。</div>
+      </div>
+      <div class="harness-contract"><strong>关键边界：</strong>编排器只决定“下一步做什么”；具体语言理解仍由角色与 Provider 完成，便于替换给定 Simple Agent。</div>
+    </section>
+    <aside class="harness-zone archive">
+      <div class="deck-eyebrow">DURABLE RUN ARCHIVE</div>
+      <h2>一次运行的长期档案</h2>
+      <p>每个 <code>run_id</code> 由 SQLite、JSONL 和内容快照共同保存。</p>
+      <ul>
+        <li>输入与模型路由</li>
+        <li>查询、页面与来源快照</li>
+        <li>证据、产物和接收记录</li>
+        <li>用量、错误、终态与评分</li>
+      </ul>
+      <div class="harness-contract"><strong>运行目录：</strong><code>final.json</code>、<code>events.jsonl</code>、<code>checkpoints.sqlite</code> 与内容快照共同对应一个 <code>run_id</code>。</div>
+    </aside>
+  </div>
+  <div class="harness-chain"><div><strong>用户问题</strong><br>文本、任务约束与附件</div><i>→</i><div><strong>Harness</strong><br>计划、循环、证据与质量控制</div><i>→</i><div><strong>结果档案</strong><br>答案、证据、调用、指标与恢复点</div></div>
+  <div class="deck-note"><strong>Simple Agent 接入方式：</strong>当前仓库未包含组织方给定框架的源码，因此不宣称已导入它。Harness 只依赖 <code>ModelProvider</code>、<code>SearchProvider</code> 和结构化错误等稳定边界；拿到框架后，将其模型调用、工具结果和错误状态映射到这些边界，即可复用现有证据、恢复和评测模块。</div>
+  <div class="slide-number">12</div>
+</div>
+
+<!-- Slide 13: Long-horizon loop -->
+<div class="slide research-slide" id="slide-deep-research-loop">
+  <h1>长程研究 Agent Loop：每一轮围绕“当前还缺什么材料”推进</h1>
+  <p class="project-lede">编排器使用显式状态机，而不是依赖不断增长的对话历史。每个阶段都有输入、输出、质量检查和可恢复保存点；外部调用完成后才更新下一阶段。</p>
+  <div class="loop-board">
+    <article class="loop-stage"><b>01 PARSE</b><strong>解析任务</strong><span>输入：原始问题与附件。<br>操作：标准化题意、范围和约束。<br>产物：可规划的研究任务。</span><div class="stage-rule"><strong>关键规则：</strong>附件先保存内容身份和清单，再交给后续角色，避免讨论对象在运行中变化。</div><small>保存：原始输入、附件清单、内容哈希</small></article>
+    <article class="loop-stage"><b>02 PLAN</b><strong>生成研究计划</strong><span>输入：任务与附件观察。<br>操作：定义子问题、答案目标和完成条件。<br>产物：版本化 <code>ResearchPlan</code>。</span><div class="stage-rule"><strong>关键规则：</strong>每个 <code>AnswerSlot</code> 都有对应子问题和完成条件；没有必需目标时，进度为无效而不是伪造零分。</div><small>保存：plan revision、answer slots、subgoals</small></article>
+    <article class="loop-stage"><b>03 QUERY</b><strong>按缺口生成查询</strong><span>输入：未覆盖目标、旧查询和失败原因。<br>操作：改写、消歧、来源定向和去重。<br>产物：有目标的 <code>QueryBatch</code>。</span><div class="stage-rule"><strong>关键规则：</strong>优先选择能覆盖最多未完成目标的查询意图；每轮最多三组目标进入调度，避免无边界扩张。</div><small>控制：轮次、搜索预算、重复率与策略</small></article>
+    <article class="loop-stage"><b>04 RETRIEVE</b><strong>搜索、抓取与解析</strong><span>输入：查询批次。<br>操作：搜索、读取网页或 PDF、解析正文。<br>产物：页面快照与工具调用记录。</span><div class="stage-rule"><strong>关键规则：</strong>保存最终 URL、正文和抓取状态；抓取失败、被拦截或未发送的调用不能被计为“已阅读”。</div><small>保存：来源记录、页面快照、调用与错误</small></article>
+    <article class="loop-stage"><b>05 ASSESS</b><strong>整理证据并检查缺口</strong><span>输入：可读页面和原文摘录。<br>操作：去重、来源归并、相关性与反证检查。<br>产物：账本、冲突和补查任务。</span><div class="stage-rule"><strong>关键规则：</strong>每个目标分别检查原文、独立来源、定位、反证和冲突；任一项缺失都会变成下一轮的具体任务。</div><small>保存：Evidence Ledger、ClosureReport、缺口</small></article>
+    <article class="loop-stage"><b>06 DELIVER</b><strong>写作与逐句引用核验</strong><span>输入：通过证据准入的材料。<br>操作：受约束写作和逐句引用核验。<br>产物：直接回答或定向修复任务。</span><div class="stage-rule"><strong>关键规则：</strong>写作只读取被选中的支持证据；核验器重新计算句子与引用集合，模型自报“通过”不能直接放行。</div><small>保存：答案、引用、核验报告、修复路线</small></article>
+  </div>
+  <div class="loop-return"><div><strong>材料不足：</strong>把未覆盖目标转成新的定向查询，并在受控预算内继续检索。</div><div><strong>发现冲突：</strong>增加反证和消歧查询，比较独立来源后再决定是否写入结论。</div><div><strong>引用不通过：</strong>定位到具体回答句和缺失证据，只修复对应问题，不重跑整份研究。</div></div>
+  <div class="deck-note"><strong>长程控制原则：</strong>查询、页面、证据和回答均有版本与时间顺序。预算耗尽时系统交付当前可支持的直接回答，并保留明确的补查任务和恢复位置。</div>
+  <div class="slide-number">13</div>
+</div>
+
+<!-- Slide 14: Evidence method -->
+<div class="slide research-slide" id="slide-deep-research-evidence-method">
+  <h1>证据处理的关键规则：去重、来源判断、冲突处理与引用绑定</h1>
+  <p class="project-lede">Evidence Ledger 是长程检索的共同数据层。每条可用材料都保留来源、原文位置、目标关联、立场和保存快照，后续写作与核验从账本中读取，而不是从记忆中回忆。</p>
+  <div class="evidence-layout">
+    <section class="evidence-grid">
+      <article class="evidence-card"><b>01 DEDUPLICATE</b><strong>先合并重复材料</strong><span>依次检查规范 URL、正文哈希、近重复文本、页面声明的 canonical 或发布方线索；同一转载链不重复计为多份独立证据。</span><div class="evidence-rule"><strong>归并顺序：</strong>URL → 正文哈希 → SimHash 近重复 → canonical / 上游链接 → 来源簇。</div><small>留存字段：canonical URL、正文哈希、来源簇、上游线索。</small></article>
+      <article class="evidence-card"><b>02 SOURCE REVIEW</b><strong>来源等级只用于排序</strong><span>官方候选、论文、参考资料和一般网页使用透明的策略先验；这些值不表示“事实为真的概率”，仍需原文、独立性和冲突检查。</span><div class="evidence-rule"><strong>策略先验：</strong>官方 .95、论文 .90、参考资料 .82、一般网页 .65；只影响补查优先级，不豁免检查。</div><small>留存字段：来源类型、发布方信号、独立来源簇和策略先验。</small></article>
+      <article class="evidence-card"><b>03 CONFLICT REVIEW</b><strong>把相反说法放在同一目标下比较</strong><span>年份、数值或归因不一致时，系统记录支持与反驳候选；反证搜索必须成功读取相关页面，不能用空结果通过检查。</span><div class="evidence-rule"><strong>裁决原则：</strong>按独立来源簇比较；同一转载链只算一个来源，标记为依赖副本的材料不增加共识票数。</div><small>留存字段：立场、候选值、冲突组、反证查询和裁决状态。</small></article>
+      <article class="evidence-card"><b>04 CITE AND VERIFY</b><strong>把回答句连回原文</strong><span>引用必须指向账本中的材料编号、原文摘录和页面定位；逐句核验检查是否遗漏引用或扩大了原文结论。</span><div class="evidence-rule"><strong>核验方式：</strong>按句号、分号和换行切分声明，重算每句应有的引用集合和原文支持关系。</div><small>留存字段：回答句、Evidence ID、原文定位、核验结果和原因。</small></article>
+    </section>
+    <aside class="gate-panel">
+      <div class="deck-eyebrow">DELIVERY GATES</div>
+      <h2>每个必需回答目标的五项检查</h2>
+      <p>只有所有必需目标都通过，研究才可以标记为完成。这五项是不可相互补偿的交付条件；加权进度分数只能帮助排定补查顺序。</p>
+      <div class="gate-list">
+        <div><b>1</b><span>有直接支持该目标的可用原文</span></div>
+        <div><b>2</b><span>来源数量和独立性达到计划要求</span></div>
+        <div><b>3</b><span>原文可以重新定位并与声明一致</span></div>
+        <div><b>4</b><span>已执行并检查相关反证搜索</span></div>
+        <div><b>5</b><span>显式冲突已裁决或被标注为边界</span></div>
+      </div>
+      <div class="gate-score"><strong>补查优先级分数</strong>目标覆盖 35% + 独立来源 25% + 原文一致性 20% + 来源策略 10% + 冲突 10%。没有必需目标时显示“无效”。</div>
+    </aside>
+  </div>
+  <div class="deck-note"><strong>量化方式：</strong>页面显示的“证据充分度”由目标覆盖、独立来源、原文一致性、来源策略和冲突状态组成，并公开权重、分母和局限。它是用于编排的透明启发式，不是结论正确率，也不是事实真实性概率。</div>
+  <div class="slide-number">14</div>
+</div>
+
+<!-- Slide 15: Failure-directed recovery -->
+<div class="slide research-slide" id="slide-deep-research-recovery">
+  <h1>错误归因与自主迭代：把失败转成下一次可执行的修复任务</h1>
+  <p class="project-lede">系统不会对所有失败做无差别重试。每条失败记录包含阶段、类型、是否可安全重试、影响的研究目标和下一步动作；恢复从最近一致的 checkpoint 接续。</p>
+  <div class="diagnosis-grid">
+    <article class="diagnosis-card"><b>QUERY ERROR</b><strong>查询没有覆盖目标</strong><span>发现重复、过宽或缺少实体消歧时，依据未覆盖答案目标补充时间、机构、别名或来源约束。</span><div class="diagnosis-detail"><div><strong>识别：</strong>查询与 <code>AnswerSlot</code> 的覆盖不足或重复率过高。</div><div><strong>修复输入：</strong>当前缺口、旧查询和已查来源。</div></div><small>动作：改写查询并保留旧查询记录。</small></article>
+    <article class="diagnosis-card"><b>SEARCH / FETCH ERROR</b><strong>搜索或抓取失败</strong><span>区分临时网络失败、URL 不可访问、动态页面和安全拦截；切换候选来源或等待后重试。</span><div class="diagnosis-detail"><div><strong>识别：</strong>保存 provider 错误、发送状态和页面状态。</div><div><strong>防重：</strong>只重试未发送或可证明幂等的操作。</div></div><small>动作：切换来源或按退避策略重试。</small></article>
+    <article class="diagnosis-card"><b>EVIDENCE GAP</b><strong>材料不足或来源同源</strong><span>缺少原文、独立来源或反证时，生成针对具体答案目标的补查任务，并按预算分配检索轮次。</span><div class="diagnosis-detail"><div><strong>识别：</strong>五项交付检查中具体未通过的目标。</div><div><strong>修复输入：</strong>缺口类型、目标 ID 和优先级。</div></div><small>动作：受限扩展预算，不无限循环。</small></article>
+    <article class="diagnosis-card"><b>CONFLICT</b><strong>多个材料给出相反结论</strong><span>把数值、年份或归因候选聚类，记录来源立场，优先补原始或独立材料。</span><div class="diagnosis-detail"><div><strong>识别：</strong>同一目标下有相反候选。</div><div><strong>修复输入：</strong>立场、来源簇、反证查询和裁决状态。</div></div><small>动作：进入冲突检查，不把多数转载当共识。</small></article>
+    <article class="diagnosis-card"><b>CITATION ERROR</b><strong>回答句缺少或误用引用</strong><span>逐句定位具体声明，再回到对应答案目标补证；写作只消费已准入材料。</span><div class="diagnosis-detail"><div><strong>识别：</strong>缺少 Evidence ID、定位失败或原文不支持。</div><div><strong>修复输入：</strong>回答句、预期引用集合和缺口目标。</div></div><small>动作：执行一次定向引用修复回路。</small></article>
+    <article class="diagnosis-card"><b>UNCERTAIN PAID CALL</b><strong>计费调用结果不确定</strong><span>响应中断、返回无效或缓存写入失败时，不自动重复可能已计费的模型调用。</span><div class="diagnosis-detail"><div><strong>识别：</strong>响应未知、结果不完整或持久化失败。</div><div><strong>保留：</strong>操作键、费用线索和人工确认状态。</div></div><small>动作：保留现场，等待人工确认后再解锁。</small></article>
+  </div>
+  <div class="deck-note"><strong>恢复链路：</strong>检测失败 → 保存错误与当前状态 → 选择对应修复动作 → 写入 checkpoint → 从指定节点继续。这样可以同时做失败分布统计、定位某个异常调用，并避免重复搜索或重复计费。</div>
+  <div class="slide-number">15</div>
+</div>
+
+<!-- Slide 16: Evaluation design -->
+<div class="slide research-slide" id="slide-deep-research-evaluation-design">
+  <h1>端到端评测设计：与 Simple Agent 基线比较效果、证据质量和效率</h1>
+  <p class="project-lede">每个评测题目独立运行并保存完整记录。评测既看答案，也看证据是否可核验、工具是否高效、失败能否解释；这样才能判断 Harness 的额外控制是否带来实际收益。</p>
+  <div class="evaluation-layout">
+    <section class="evaluation-zone">
+      <div class="deck-eyebrow">TASK SETS</div>
+      <h2>数据集与任务组织</h2>
+      <p>批量评测器读取 JSONL 任务，逐题生成独立 <code>run_id</code> 和结果文件，题目之间不共享中间材料或缓存状态。</p>
+      <ul>
+        <li><strong>BrowseComp：</strong>长程网页浏览与事实检索。</li>
+        <li><strong>GAIA：</strong>多步骤、多工具通用任务。</li>
+        <li><strong>离线 replay：</strong>用于固定材料的回归测试和调试。</li>
+      </ul>
+      <div class="evaluation-record"><div><strong>任务输入</strong><code>id</code>、<code>question</code>、可选 <code>answers</code>。</div><div><strong>当前自动评分</strong><code>exact_match</code>；正式 judge 可替换。</div><div><strong>题目隔离</strong>每题独立运行目录与 checkpoint。</div><div><strong>回放条件</strong>固定模型、搜索语料、预算、版本和价格表。</div></div>
+      <div class="evaluation-detail"><strong>任务入口：</strong><code>cli eval --offline</code> 读取 JSONL 并输出 <code>EvaluationRecord</code>；接入官方题目时只替换任务文件与 judge，不改变运行记录结构。</div>
+    </section>
+    <section class="evaluation-zone">
+      <div class="deck-eyebrow">COMPARISON GROUPS</div>
+      <h2>基线、完整系统与消融</h2>
+      <p>正式实验固定模型、搜索源、预算和题目切分，只改变 Harness 模块。</p>
+      <ul>
+        <li><strong>Simple Agent 基线：</strong>局部工具调用与直接回答。</li>
+        <li><strong>完整 Harness：</strong>计划、证据账本、闭环检索、恢复和引用核验。</li>
+        <li><strong>消融：</strong>依次移除动态查询、去重/冲突、Evidence Closure、失败恢复或引用核验。</li>
+      </ul>
+      <div class="evaluation-record"><div><strong>基线</strong>同题、同工具预算，只做局部调用与直接回答。</div><div><strong>完整系统</strong>允许计划、补查、证据准入、恢复和逐句核验。</div><div><strong>消融</strong>每次仅关闭一个 Harness 模块。</div><div><strong>失败归因</strong>基线与 Harness 使用同一分类表。</div></div>
+      <div class="evaluation-detail green"><strong>控制变量：</strong>同一题目切分、模型版本、搜索源、页面和调用预算、价格表与并发度；只改变被消融的 Harness 模块。</div>
+    </section>
+    <section class="evaluation-zone">
+      <div class="deck-eyebrow">METRICS</div>
+      <h2>每题与汇总指标</h2>
+      <div class="metric-grid">
+        <div><strong>任务完成</strong>完成题数 / 总题数；答案由官方 judge 或参考答案判断。</div>
+        <div><strong>证据与引用</strong>必需目标硬门通过率、逐句引用通过率、可定位原文比例。</div>
+        <div><strong>工具效率</strong>搜索次数、读取页面、重复查询率、缓存命中和重试次数。</div>
+        <div><strong>资源与诊断</strong>输入输出 Token、费用、时延分位数、失败类型分布与恢复成功率。</div>
+      </div>
+      <div class="evaluation-record"><div><strong>完成率</strong><code>completed</code> 题数 / 全部题数，与答案正确性分开。</div><div><strong>引用通过率</strong>通过核验的声明数 / 需要引用的声明数。</div><div><strong>时延与成本</strong>从操作账本聚合；未记录则标为缺失。</div><div><strong>失败分布</strong>查询、抓取、证据、冲突、引用与不确定计费调用。</div></div>
+      <div class="evaluation-detail gold"><strong>汇总规则：</strong>每题先写出原始记录，再按任务类别统计均值、通过率与分布；正式基准结果必须同时给出题目数、模型版本、搜索源、预算和失败样本，而不是只报一个总分。</div>
+    </section>
+  </div>
+  <div class="deck-note"><strong>结果文件：</strong><code>EvaluationRecord</code> 已写出任务状态、exact match、证据闭包状态、引用核验状态、搜索次数和读取页面数。正式数据集接入后，评测脚本在同一格式上追加 Token、费用、时延和失败分布聚合。</div>
+  <div class="slide-number">16</div>
+</div>
+
+<!-- Slide 17: Reproducibility status -->
+<div class="slide research-slide" id="slide-deep-research-reproducibility">
+  <h1>可复现实验记录：已有真实结果与等待官方数据集的部分分开呈现</h1>
+  <p class="project-lede">系统已经具备单题运行、离线回放、批量 JSONL 评测和报告接口。下面的数字来自已保存运行记录；BrowseComp、GAIA 的正式排名和消融表只会在拿到官方题目与 judge 后再生成。</p>
+  <div class="repro-layout">
+    <section class="repro-zone">
+      <div class="deck-eyebrow">PER-TASK ARCHIVE</div>
+      <h2>每道题保存什么</h2>
+      <ul>
+        <li>原始输入、附件清单、模型路由、预算与配置快照。</li>
+        <li>查询、搜索、抓取、页面快照、证据、冲突和引用。</li>
+        <li>操作账本、Token 用量、缓存、耗时字段、失败与恢复事件。</li>
+        <li>最终回答、评分记录、SQLite checkpoint、JSONL 事件投影和报告。</li>
+      </ul>
+      <div class="repro-tree">runs/&lt;run_id&gt;/
+  final.json         最终状态与答案
+  events.jsonl       追加式过程事件
+  checkpoints.sqlite 保存点与恢复记录
+  snapshots/         页面与输入内容快照</div>
+    </section>
+    <section class="repro-zone">
+      <div class="deck-eyebrow">OBSERVED RUNS</div>
+      <h2>已经完成的可核对运行</h2>
+      <div class="run-fact"><strong>离线回归评测：</strong><code>eval-python-history</code> 共 1 道固定材料任务，<code>exact_match=true</code>、引用核验通过；记录 2 次搜索与 6 个已读取页面。</div>
+      <div class="run-fact alt"><strong>真实三模型全流程：</strong><code>completed-team-20260721</code> 的 2 个必需回答目标均通过检查；运行 2 轮、5 次搜索、3 个页面、11 次模型调用，记录 7,803 输入 Token 和 2,785 输出 Token。</div>
+      <div class="run-fact warn"><strong>解释边界：</strong>该三模型运行使用确定性 replay 搜索，因此验证的是协作、证据闭环与交付链路，不将其写成实时网页新鲜度基准成绩。</div>
+    </section>
+    <section class="repro-zone">
+      <div class="deck-eyebrow">OFFICIAL BENCHMARKS</div>
+      <h2>正式量化结果的前置条件</h2>
+      <ul>
+        <li>导入组织方提供的 BrowseComp / GAIA 题目、参考答案和官方 judge。</li>
+        <li>冻结模型、搜索源、预算和价格表，重复运行完整系统、基线和消融组。</li>
+        <li>按任务类别汇总完成率、答案分数、引用、Token、时延、成本与失败分布。</li>
+        <li>当前仓库未收到官方数据和 judge，因此不虚构正式基准分数或失败直方图。</li>
+      </ul>
+      <div class="repro-tree"><strong>提交前的结果表必须同时注明：</strong><br>题目数量和版本、模型与价格表、搜索源与时间、预算、随机性设置、原始运行目录，以及失败样本的可回查编号。</div>
+    </section>
+  </div>
+  <div class="deck-note"><strong>复现入口：</strong><code>cli run</code> 用于单题，<code>cli eval --offline</code> 用于固定回放，<code>cli inspect</code> 与 <code>cli report</code> 可回看指定运行。正式测试只需替换 JSONL 任务与 judge，运行记录格式保持不变。</div>
+  <div class="slide-number">17</div>
+</div>
+
+<!-- Slide 18: Frontend information architecture -->
+<div class="slide research-slide" id="slide-deep-research-frontend-map">
+  <h1>系统界面：提交问题、查看结果与核对材料</h1>
+  <p class="project-lede">页面把信息按“先用、再理解、最后复核”分层。所有可点开的卡片、图和弹窗都来自同一个持久化运行记录，不依赖演示用假数据。</p>
+  <div class="frontend-atlas">
+    <section class="atlas-groups">
+      <div class="atlas-group"><b>发起研究</b><span>输入问题、上传图片/PDF/文本/音频，选择 GPT、Qwen、DeepSeek 或按角色协作的模型档案；同时展示预算、价格和历史记录。</span></div>
+      <div class="atlas-group"><b>先看结论</b><span>运行页首屏显示当前回答、引用入口、交付状态、输入附件摘要，以及下一步应该补什么；完整答案和逐句核对放在独立区域。</span></div>
+      <div class="atlas-group"><b>查看执行</b><span>六角色总控图、逐条交接、角色调用记录、五项交付检查、量化依据、失败与定向恢复审计，均可展开到原始记录。</span></div>
+      <div class="atlas-group"><b>追材料</b><span>研究计划、查询路线、来源关系图、文章阅读顺序、证据账本、来源快照、协议边界和选型审查分别提供；移动端保留章节导航与弹窗查验。</span></div>
+    </section>
+    <section class="deck-card">
+      <div class="deck-eyebrow">THE PAGE ORDER</div>
+      <h2>同一份运行记录，在不同阅读深度下呈现不同信息</h2>
+      <div class="atlas-steps">
+        <div><strong>第一层</strong><br>问题、结论、当前状态和“下一步”</div>
+        <div><strong>第二层</strong><br>角色协作、检查依据、模型与成本记录</div>
+        <div><strong>第三层</strong><br>文章、原文、附件定位、快照和恢复审计</div>
+      </div>
+      <div class="deck-checklist" style="margin-top: 12px;">
+        <article><i>A</i><div><strong>来源图用于核对材料</strong><span>从检索词可沿线看到文章、页面读取、原文证据和它支撑的回答目标。</span></div></article>
+        <article><i>B</i><div><strong>统计值旁边有定义</strong><span>页面区分“搜索次数、读取页面、来源记录、原文摘录、模型调用和缓存”，不把它们合成一个神秘分数。</span></div></article>
+        <article><i>C</i><div><strong>技术字段不挡在前面</strong><span>正文使用面向人的说明；运行编号、哈希、协议字段和原始 JSON 留在详情里供查验。</span></div></article>
+      </div>
+    </section>
+  </div>
+  <div class="slide-number">11</div>
+</div>
+
+<!-- Slide 12: Core agents -->
+<div class="slide research-slide" id="slide-deep-research-workflow">
+  <h1>智能体如何组织：六个核心角色按职责协作与交接</h1>
+  <div class="core-role-layout">
+    <aside class="core-role-side">
+      <div class="deck-eyebrow">ORCHESTRATION RULE</div>
+      <h2>每一段都有明确输入、输出和下一位接收者</h2>
+      <p>编排器保存运行状态并决定下一步。六个核心角色在同一研究引擎内协作；当用户上传附件时，输入阶段会额外调用多模态感知角色，把带位置的观察交给规划角色。</p>
+      <dl>
+        <dt>核心角色</dt><dd>规划、检索、证据整理、完整性检查、写作、引用核验。</dd>
+        <dt>可选角色</dt><dd>多模态感知，仅在有图片、PDF 页面或音频等附件时加入。</dd>
+        <dt>回路</dt><dd>检查发现材料不足时，回到检索角色补查，而不是让写作角色补写。</dd>
+        <dt>运行原则</dt><dd>前端只把有真实调用、产物或接收记录的角色标记为已执行。</dd>
+      </dl>
+    </aside>
+    <section class="role-operation-grid" aria-label="六个核心角色的输入输出">
+      <article class="role-operation"><b>01 PLANNER</b><strong>研究规划</strong><span>读取用户问题与附件观察，拆出必须回答的子问题，并定义每项的完成条件。</span><small>交出：研究计划、问题清单、缺口定义</small></article>
+      <article class="role-operation"><b>02 SCOUT</b><strong>检索策略</strong><span>按当前缺口设计查询、调用搜索并记录候选文章和读取顺序。</span><small>交出：查询记录、候选来源、失败原因</small></article>
+      <article class="role-operation"><b>03 CURATOR</b><strong>证据整理</strong><span>从可读页面中抽取可直接支撑结论的原话、位置、来源快照和关联目标。</span><small>交出：证据账本、原文定位、来源绑定</small></article>
+      <article class="role-operation"><b>04 CRITIC</b><strong>完整性检查</strong><span>检查每个问题是否有材料、独立来源、限制条件和冲突说明；缺什么就生成补查任务。</span><small>交出：通过项、缺口、返回检索的理由</small></article>
+      <article class="role-operation"><b>05 WRITER</b><strong>证据写作</strong><span>只使用已被允许进入写作的材料，形成面向人的直接回答，并附可回查编号。</span><small>交出：回答草案、引用编号、边界说明</small></article>
+      <article class="role-operation"><b>06 VERIFIER</b><strong>引用核验</strong><span>检查回答句是否有材料编号、材料能否重新定位，以及引用是否完整支持该句。</span><small>交出：逐句核验结果或需要继续补查的项</small></article>
+    </section>
+  </div>
+  <div class="deck-note"><strong>防止“自己给自己打分”：</strong>完整性检查由本地确定性规则执行，不让生成答案的模型自行批准自己的回答；独立的核验角色负责回答句和材料之间的对应关系。</div>
+  <div class="slide-number">12</div>
+</div>
+
+<!-- Slide 13: Internal handoff -->
+<div class="slide research-slide" id="slide-deep-research-handoff">
+  <h1>内部协作靠什么落地：一份交接记录、一个不可变产物、一次真实接收确认</h1>
+  <p class="project-lede">内部协议名为 <code>deep-research-handoff/1.1</code>。它是项目自己的持久化交接格式，不是 A2A 消息，也不把“计划交给谁”误写成“对方已经处理”。</p>
+  <div class="handoff-layout">
+    <article class="handoff-part">
+      <code>HandoffEnvelope</code>
+      <h2>先记录要交什么、交给谁</h2>
+      <p>生产者、预定接收者、运行编号、阶段、尝试次数和幂等键被写入一份交接记录。这里的接收者只是编排计划，尚不能证明对方已消费。</p>
+      <div class="handoff-fields"><div><strong>message_id</strong> 这次交接的唯一编号</div><div><strong>producer / route_target</strong> 由谁产生、编排到哪里</div><div><strong>quality_gate</strong> 当前阶段产物是否达到声明的检查条件</div></div>
+    </article>
+    <article class="handoff-part">
+      <code>ArtifactRef</code>
+      <h2>再保存可复算的阶段产物</h2>
+      <p>计划、查询批次、证据账本等产物保存为规范化 JSON。记录内容地址、字节数、产生者和 SHA-256，使后续读取到的是哪一版内容可以复查。</p>
+      <div class="handoff-fields"><div><strong>artifact_id</strong> 产物身份与版本</div><div><strong>checksum</strong> 内容是否被改动的校验值</div><div><strong>parent_artifact_id</strong> 与上一阶段产物的关联</div></div>
+    </article>
+    <article class="handoff-part">
+      <code>HandoffReceipt</code>
+      <h2>最后才证明后续角色真的使用了它</h2>
+      <p>只有下一次调用明确引用这条交接的 message_id，系统才写入接收回执。回执记录谁在何时、以哪次调用、为了哪项操作消费了它。</p>
+      <div class="handoff-fields"><div><strong>consumed_by_agent_id</strong> 实际接收角色</div><div><strong>consumed_by_invocation_id</strong> 对应的真实执行记录</div><div><strong>valid</strong> 接收关系与运行/产物身份是否一致</div></div>
+    </article>
+  </div>
+  <div class="handoff-scenario"><div><b>规划角色</b><br>产出研究计划与问题清单</div><i>-></i><div><b>检索角色</b><br>调用时明确消费该交接编号</div><i>-></i><div><b>系统回执</b><br>关联这次调用、产物和时间</div></div>
+  <div class="deck-note"><strong>恢复时也遵循同一原则：</strong>保存点只说明“可以从这里继续”；真正恢复还要看到新的执行器启动、接管记录和终态一致性。页面把这四类记录分开展示，便于人工判断。</div>
+  <div class="slide-number">13</div>
+</div>
+
+<!-- Slide 14: Protocol boundaries -->
+<div class="slide research-slide" id="slide-deep-research-protocols">
+  <h1>协议选型与边界：对内保持可审计，对外按能力使用标准协议</h1>
+  <p class="project-lede">系统刻意不把所有东西都称为“协议兼容”或“多 Agent A2A”。下面区分实际运行路径、经过固定测试的适配器和仍待迁移的候选方案。</p>
+  <div class="protocol-layout">
+    <article class="protocol-card"><b>INTERNAL RUNTIME</b><strong>私有交接与持久化状态机</strong><span>六个角色在同一 ResearchEngine 中用 <code>deep-research-handoff/1.1</code>、SQLite checkpoint、产物账本和调用记录协作。</span><small>当前运行时。它不是 A2A wire object。</small></article>
+    <article class="protocol-card"><b>BROWSER EVENT FLOW</b><strong>自定义 GET 过程流 + 有限 AG-UI POST 适配</strong><span>浏览器实时页面使用项目自定义 SSE，断开时回退轮询；<code>POST /api/ag-ui</code> 的固定 JSON/SSE 路径用官方 SDK 进行了成功、暂停、恢复、取消和重放验证。</span><small>不宣称完整 AG-UI 事件、状态、工具和上下文语义兼容。</small></article>
+    <article class="protocol-card"><b>TOOL BOUNDARY</b><strong>MCP 2025-11-25，stdio</strong><span>MCP 服务只公开 <code>search</code> 与 <code>fetch</code> 两个工具，并通过官方 SDK 初始化和调用测试。规划、批评、写作角色不是 MCP 工具。</span><small>当前 ResearchEngine 仍直接调用 provider；MCP 是独立的外部工具边界。</small></article>
+    <article class="protocol-card"><b>REMOTE AGENT BOUNDARY</b><strong>A2A 1.0，JSON-RPC 2.0</strong><span>对外暴露的是完整 ResearchEngine 这一名远程 Agent。一个 A2A Task 确定性映射到一个可持久化的 research run。</span><small>SDK 1.1.1；已验证非流式路径。六个内部角色不伪装为六个 A2A Agent。</small></article>
+    <article class="protocol-card"><b>FUTURE CANDIDATES</b><strong>LangGraph、smolagents、OpenTelemetry</strong><span>它们被记录为未来编排、轻量基线和跨边界追踪候选，并未安装或导入当前运行时。</span><small>展示里不把候选组件说成已经实现的能力。</small></article>
+  </div>
+  <div class="deck-note"><strong>为什么这样分层：</strong>内部需要低延迟、可恢复和可审计的阶段协作；远程 Agent、工具和浏览器事件则各自采用更适合的标准边界。明确限制比笼统宣称“全协议支持”更可靠。</div>
+  <div class="slide-number">14</div>
+</div>
+
+<!-- Slide 15: Runtime architecture and model routing -->
+<div class="slide research-slide" id="slide-deep-research-implementation">
+  <h1>运行时设计：模型路由、材料档案和恢复机制共同支撑一次研究</h1>
+  <div class="project-architecture">
+    <section class="project-arch-zone">
+      <h2>模型如何分工</h2>
+      <p>团队档案不是让同一个模型重复调用。配置中把模型能力按任务分开，并保留每次实际 provider、模型 ID、输入模态和使用量。</p>
+      <div class="project-arch-list">
+        <div><strong>GPT：</strong>图像感知、研究规划和答案写作。</div>
+        <div><strong>DeepSeek：</strong>检索策略与证据整理。</div>
+        <div><strong>Qwen：</strong>独立的引用核验。</div>
+        <div><strong>本地规则：</strong>完整性检查，不让模型批准自己的输出。</div>
+      </div>
+    </section>
+    <section class="project-arch-zone orchestrator">
+      <h2>编排器如何控制成本与恢复</h2>
+      <p>每一次模型调用与网页读取都写入运行账本。缓存命中、价格可计算性、预算、失败原因和恢复接管状态在页面上分开呈现。</p>
+      <div class="project-arch-list">
+        <div><strong>缓存：</strong>复用已保存的相同调用，避免重复花费。</div>
+        <div><strong>价格：</strong>只有模型用量和价格表都完整时才显示费用；缺失不当作免费。</div>
+        <div><strong>恢复：</strong>保存 checkpoint、执行占用和接管记录；恢复授权不等于恢复完成。</div>
+      </div>
+    </section>
+    <section class="project-arch-zone archive">
+      <h2>材料为什么可回查</h2>
+      <p>来源、原话、附件和运行事件分别保存，再由引用与交接关系关联起来。读者可以从结论返回材料，而不是只看到一串 URL。</p>
+      <div class="project-arch-list">
+        <div><strong>网页：</strong>查询、读取结果、来源快照与原文定位。</div>
+        <div><strong>附件：</strong>内容 SHA-256、原始文件、感知模型和区域观察。</div>
+        <div><strong>答案：</strong>引用编号、逐句核验和未完成项。</div>
+      </div>
+    </section>
+  </div>
+  <div class="deck-note"><strong>多模态不被当成装饰：</strong>附件先存身份再被理解；图像观察只能证明“图里画了什么”，不能单独代替外部来源对普适结论的验证。</div>
+  <div class="slide-number">15</div>
+</div>
+
+<!-- Slide 16: Actual frontend -->
+<div class="slide research-slide" id="slide-deep-research-actual-ui">
+  <h1>真实前端首屏：结论、材料和执行状态在同一份运行档案中出现</h1>
+  <p class="publication-meta">2026-07-24 从本地服务 <code>http://127.0.0.1:8005/run.html?id=f66ec365d203</code> 重新截取的完整首屏。图片保留了真实页面的结论、运行状态和可点击入口，而不是拼接的局部效果图。</p>
+  <div class="runtime-shot-layout">
+    <figure class="runtime-shot"><img src="assets/reid-current-overview.png" alt="真实 ReID 研究运行页完整首屏，包含问题、当前结论、引用材料、交付检查摘要与角色协作入口"></figure>
+    <aside class="runtime-shot-notes">
+      <article><b>上方：一次研究的身份与当前状态</b><span>问题、模型档案、检索入口和是否已交付并列出现；状态旁边的文字说明检查的具体含义。</span></article>
+      <article><b>中部：先交付可读结论</b><span>摘要与引用材料卡片在前，读者可直接打开已保存的材料，而不是先面对复杂日志。</span></article>
+      <article><b>右侧：运行事实而非综合评分</b><span>研究问题、来源、原文摘录、引用绑定和研究轮次分别计数，各自有标签和解释。</span></article>
+      <article><b>下方：进入协作和材料档案</b><span>按钮与章节导航可打开六角色总控、交接明细、来源图、文章顺序、证据账本、方法和协议审计。本轮有 5 个核心角色留下成功调用；语义核验超时后使用本地引用绑定交付，并把待重试原因保留在审计中。</span></article>
+    </aside>
+  </div>
+  <div class="deck-note"><strong>截图来源：</strong>当前 Web 前端与保存的 <code>runs/f66ec365d203/final.json</code> 使用同一运行编号。展示中每个数字都回到该文件或对应 SQLite/JSONL 账本，而不是由汇报页手工填写。</div>
+  <div class="slide-number">16</div>
+</div>
+
+<!-- Slide 17: Text-only case -->
+<div class="slide research-slide" id="slide-deep-research-case">
+  <h1>案例 A：一句“ReID 领域最新进展”，如何得到一份可复查的调研</h1>
+  <div class="case-plan-layout">
+    <section class="case-prompt-block">
+      <div class="deck-eyebrow">REAL INPUT · f66ec365d203</div>
+      <h2>“ReID 领域最新进展”</h2>
+      <p>输入没有附件、也没有指定论文。系统没有把“ReID 是什么”当成主答案，而是把“最新进展”拆成方法变化、评测变化、真实域表现和仍未解决的问题。</p>
+      <div class="deck-note" style="margin-top: 14px;"><strong>先给直接回答：</strong>近年的主线不是再定义 ReID，而是把它从“干净榜单上的外观匹配”推进到 Transformer/局部结构、可见光-红外与多模态融合、自监督与跨域泛化，以及真实环境下的鲁棒性和长期变化评测。当前公开材料还显示，低照度、遮挡、合成到真实和大规模检索仍是主要瓶颈。</div>
+    </section>
+    <section class="deck-card">
+      <div class="deck-eyebrow">THE RESEARCH PLAN</div>
+      <h2>规划器明确了五项必须回答的内容</h2>
+      <div class="case-question-list">
+        <div><b>1</b><span><strong>表征正在变化：</strong>Transformer 用局部部件和长程上下文替代只看全局外观的单一路线。</span></div>
+        <div><b>2</b><span><strong>输入正在变多：</strong>可见光-红外、RGBN、文本图像和其他传感器被用于补足单 RGB 在低照度、遮挡下的信息缺口。</span></div>
+        <div><b>3</b><span><strong>评测正在变真实：</strong>研究开始看腐蚀、跨域、合成到真实、长期外观变化，而不是只看 Market-1501 等干净基准。</span></div>
+        <div><b>4</b><span><strong>工程目标正在变化：</strong>模型规模、检索效率、图库扩展和隐私限制开始和精度一起被讨论。</span></div>
+        <div><b>5</b><span><strong>结论边界：</strong>这些是本轮检索到的代表性进展，不声称覆盖 2026 年全部方法或完整 SOTA 排名。</span></div>
+      </div>
+    </section>
+  </div>
+  <div class="record-strip">
+    <div><b>检索记录</b><strong>11 次查询</strong><small>围绕方法、鲁棒性、真实域和未来方向逐轮调整。</small></div>
+    <div><b>页面阅读</b><strong>23 次读取尝试，22 次成功</strong><small>成功读取和失败记录分开保存，不把失败算成已阅读。</small></div>
+    <div><b>材料档案</b><strong>23 条来源，37 段原文证据</strong><small>来源记录与可定位摘录分别保存。</small></div>
+    <div><b>回答绑定</b><strong>逐句引用编号已绑定</strong><small>本地引用绑定完成；外部语义核验超时单独记录。</small></div>
+  </div>
+  <div class="deck-note"><strong>这些数字来自哪里：</strong>全部读取自 <code>f66ec365d203</code> 的最终快照和账本。本轮记录 18 次外部模型调用、88,004 个输入 Token、4,517 个输出 Token，按已配置价格估算为 <code>$0.176535</code>。这些指标描述执行规模与材料留存，不等同于“答案正确率”或一个不可解释的可信度分数。</div>
+  <div class="slide-number">17</div>
+</div>
+
+<!-- Slide 18: Text-only runtime evidence -->
+<div class="slide research-slide" id="slide-deep-research-text-screen">
+  <h1>协作总控：实际运行与设计路线如何分开显示</h1>
+  <p class="publication-meta">2026-07-24 从同一真实运行重新截取的协作区域。图中角色、连线和底部执行摘要由运行账本生成；缺少执行记录的角色不会被图示成已完成。</p>
+  <div class="runtime-shot-layout">
+    <figure class="runtime-shot"><img src="assets/reid-current-agents.png" alt="真实 ReID 运行页中的六角色协作总控图，显示研究总控、各角色状态、执行摘要和协作核查入口"></figure>
+    <aside class="runtime-shot-notes">
+      <article><b>中心：研究总控</b><span>编排器维护阶段状态和后续路线；它不替代角色产出内容。</span></article>
+      <article><b>周围：六个核心角色</b><span>角色卡会显示负责的输入输出、模型路由和实际调用状态。本轮规划、检索、证据整理、完整性审查和写作留下成功调用；引用核验角色实际启动，但语义服务超时后改由本地引用绑定完成可追溯交付。</span></article>
+      <article><b>连线：路线与记录不同颜色</b><span>设计中的计划路线、已确认接收、待处理缺口和不一致记录不会混成同一种“成功箭头”。</span></article>
+      <article><b>可展开：逐条交接与原始调用</b><span>点击卡片能继续查看交接编号、阶段产物、接收确认和执行记录，方便人为复核。</span></article>
+    </aside>
+  </div>
+  <div class="deck-note"><strong>这张图想回答的问题：</strong>“这一轮到底由谁做了什么、产物交给了谁、是否真的被下一步使用？”而不是只画一个看起来智能的流程动画。</div>
+  <div class="slide-number">18</div>
+</div>
+
+<!-- Slide 19: Multimodal input -->
+<div class="slide research-slide" id="slide-deep-research-multimodal-input">
+  <h1>案例 B：用户带来一张 2D 与 3D 融合框图，系统先理解附件再开始调研</h1>
+  <div class="attachment-board">
+    <div class="method-fig">
+      <img src="assets/multimodal-framework.png" alt="用户上传的 2D 视觉支路、3D 辅助结构支路和可靠性门控框图">
+      <div class="caption">真实附件 <code>fig_unigeo_framework_副本.png</code>。系统在调用模型前保存文件内容 SHA-256、原始文件和输入清单；截图展示的是用户提供的原图，而不是后期重绘。</div>
+    </div>
+    <section class="attachment-notes">
+      <div class="attachment-note"><h2>用户的问题</h2><p>“为什么 3D 可以增益纯 2D 的检索？”图片只能直接说明模型结构，不能直接证明所有数据集都会提升，因此系统把“图像观察”和“外部材料结论”分开保存。</p></div>
+      <div class="project-term-list">
+        <div class="project-term"><code>f_vis</code><span>2D 图像支路提取的外观信息，例如颜色、纹理、衣着和整体画面。</span></div>
+        <div class="project-term"><code>f_pose</code><span>3D 辅助支路提取的姿态和结构信息，例如关节、形状与相对空间关系。</span></div>
+        <div class="project-term"><code>alpha</code><span>可靠性门控产生的融合权重；它允许 3D 有用时参与、估计不可靠时减弱影响。</span></div>
+        <div class="project-term"><code>f_out</code><span>最终用于检索的表示，将外观与被门控后的结构线索组合起来。</span></div>
+      </div>
+      <div class="attachment-note"><h2>这一步产出什么</h2><p>多模态感知角色为这张图片生成一份附件理解记录，其中有 6 条带区域或页内位置的观察。观察记录可以回到原图，但它们只描述“图中画了什么”，不会绕过来源互证和反例检查。</p></div>
+    </section>
+  </div>
+  <div class="slide-number">19</div>
+</div>
+
+<!-- Slide 20: Multimodal processing -->
+<div class="slide research-slide" id="slide-deep-research-multimodal-flow">
+  <h1>图像案例的执行流程：附件理解、外部补证与分层交付</h1>
+  <p class="project-lede">这一轮的关键是把图片观察和外部材料合在一起，但不混用二者的证据作用。图片负责说明框图结构，外部论文负责解释为什么 3D 结构信息能补足 2D 外观信息，并给出适用边界。</p>
+  <div class="case-process-grid">
+    <article class="case-process"><b>01 输入审计</b><strong>保留原图身份</strong><span>记录 PNG 类型、内容 SHA-256、文件清单和关联运行编号，保证后续讨论的是同一张图。</span><small>输出：附件清单、内容哈希与运行绑定。</small></article>
+    <article class="case-process"><b>02 多模态感知</b><strong>把图变成可定位观察</strong><span>识别 2D 支路、3D 支路、门控模块和输出关系；每条观察有回看位置。</span><small>输出：1 份记录中的 6 条区域或页内位置观察。</small></article>
+    <article class="case-process"><b>03 研究计划</b><strong>拆成四个必答目标</strong><span>核心机制、图中融合方式、检索收益和可靠性控制被分别检查。</span><small>输出：4 个答案目标及其来源、反证和引用检查条件。</small></article>
+    <article class="case-process"><b>04 外部补证</b><strong>找论文与限制材料</strong><span>检索姿态、结构特征、融合和失败条件；已读取页面、来源记录与原文摘录进入账本。</span><small>输出：查询、页面、来源、原文摘录和失败记录。</small></article>
+    <article class="case-process"><b>05 分层交付</b><strong>完整回答 + 边界说明</strong><span>直接回答 3D 为什么能补强 2D，同时说明 3D 估计不可靠时为什么需要门控。</span><small>输出：最终回答、证据入口、逐句引用绑定和运行成本。</small></article>
+  </div>
+  <div class="record-strip">
+    <div><b>附件理解</b><strong>1 张 PNG，6 条位置化观察</strong><small>观察带位置，可回到原始附件。</small></div>
+    <div><b>外部检索</b><strong>9 次查询，13 次读取尝试</strong><small>其中 11 次成功读取；失败与复用记录分开保存。</small></div>
+    <div><b>材料留存</b><strong>13 条来源，34 条证据</strong><small>包括用户附件、3D 表示、纹理、视角、换衣和人体结构材料。</small></div>
+    <div><b>当前完成状态</b><strong>已完成最终回答</strong><small>9 条逐句引用编号完成本地材料绑定；语义模型核验超时单独记录。</small></div>
+  </div>
+  <div class="deck-note"><strong>交付方式：</strong>图片先说明结构，外部论文再说明机制和适用边界；本轮已形成完整的 3D 增益 2D 检索回答。语义模型服务超时没有被写成“语义核验通过”，但也没有让最终回答消失。</div>
+  <div class="slide-number">20</div>
+</div>
+
+<!-- Slide 21: Multimodal runtime -->
+<div class="slide research-slide" id="slide-deep-research-multimodal-screen">
+  <h1>案例 B 的真实运行页：图片观察、外部材料和最终回答进入同一份档案</h1>
+  <p class="publication-meta">2026-07-24 从本地服务 <code>http://127.0.0.1:8005/run.html?id=1568fb6a70d3</code> 重新截取的完整首屏。该运行状态为 <code>completed</code>，完成回答保存、证据闭合和本地引用绑定。</p>
+  <div class="runtime-shot-layout">
+    <figure class="runtime-shot"><img src="assets/multimodal-current-overview.png" alt="真实带图附件研究运行页完整首屏，显示用户问题、最终回答、附件材料、研究状态和协作入口"></figure>
+    <aside class="runtime-shot-notes">
+      <article><b>回答先说明机制</b><span>2D 提供颜色、纹理和外观，3D 提供姿态、形状和关节结构，可靠性门控决定结构信息这次应加入多少。</span></article>
+      <article><b>图片和论文分层</b><span>图片只能直接说明框图中的支路和连接；跨视角、姿态、换衣和遮挡等效果由外部论文材料分别支持。</span></article>
+      <article><b>最终回答有九个引用绑定</b><span>每句话都保留 Evidence ID，可回到原文和读取记录；本地绑定完成与语义模型是否返回是两个不同事实。</span></article>
+      <article><b>费用与执行规模可回查</b><span>本轮 9 次查询、13 次读取尝试（11 次成功）、13 条来源、34 条证据；账本记录 77,580 个输入 Token、5,442 个输出 Token，估算开销约 $0.202645。</span></article>
+    </aside>
+  </div>
+  <div class="slide-number">21</div>
+</div>
+
+<!-- Slide 22: Multimodal answer -->
+<div class="slide research-slide" id="slide-deep-research-multimodal-answer">
+  <h1>3D 辅助 2D 检索：最终回答如何解释这个机制</h1>
+  <p class="project-lede">图中的两个分支并行提取信息。门控模块根据当前状态决定 3D 结构信息在这一次检索中应占多大作用，因此模型不会默认“只要有 3D 就必然更好”。</p>
+  <div class="fusion-board">
+    <div class="fusion-node blue"><b>2D 视觉分支</b><strong>f_vis</strong><span>颜色、纹理、衣着和整体画面等外观信息。</span><small>从图像编码得到，擅长外观匹配；但视角、遮挡和背景变化可能让外观不稳定。</small></div>
+    <div class="fusion-arrow">+</div>
+    <div class="fusion-node green"><b>3D 辅助分支</b><strong>f_pose</strong><span>姿态、关节、形状和相对空间关系等结构信息。</span><small>来自 3D estimator 的全局与关节结构；它补充的是外观图像本身不直接表达的几何线索。</small></div>
+    <div class="fusion-arrow">-></div>
+    <div class="fusion-node gold"><b>可靠性门控</b><strong>alpha</strong><span>根据当前状态决定 3D 信息在这次检索中影响多大。</span><small>当 3D 估计不可靠或处于轻量部署时，权重可减小，甚至退回只使用 2D 的路径。</small></div>
+    <div class="fusion-arrow">-></div>
+    <div class="fusion-node dark"><b>最终检索表示</b><strong>f_out</strong><span>将外观和合适比例的结构信息合在一起，用于区分候选对象。</span><small>检索阶段比较的是这一组合表示，而不是简单把两条特征固定相加。</small></div>
+  </div>
+  <div class="fusion-caption"><div><strong>为什么可能有效：</strong>外观相近时，姿态和结构提供另一条区分线索，特别适合补充仅由纹理表达的 2D 表示。</div><div><strong>为什么需要门控：</strong>3D 估计可能出错或不稳定；权重可以下降，必要时退回只使用 2D 的路径。</div><div><strong>现在不能下的结论：</strong>一张框图不能证明固定提升幅度，也不能证明所有遮挡、视角和数据集都会提升。</div></div>
+  <div class="deck-note"><strong>本轮最终回答的边界：</strong>系统可以解释“2D 外观 + 3D 结构 + 可靠性门控”的机制，也能说明为什么 3D 估计不可靠时不能无条件加权；但不会把一张框图写成所有数据集固定提升的证明。</div>
+  <div class="slide-number">22</div>
+</div>
+
+<!-- Slide 23: Case comparison -->
+<div class="slide research-slide" id="slide-deep-research-case-comparison">
+  <h1>两个案例如何证明系统能力：同一套可查流程，适配不同输入类型</h1>
+  <p class="project-lede">案例 A 用纯文本问题验证“从宽泛调研到完整材料交付”的闭环；案例 B 用真实图像附件验证“多模态输入能进入计划、检索、回答和审计”。两个案例都交付最终回答，只是 A 侧重领域进展，B 侧重图像结构和外部材料的分层使用。</p>
+  <table class="case-comparison">
+    <thead><tr><th>对比维度</th><th>案例 A：ReID 最新进展</th><th>案例 B：3D 如何增益 2D 检索</th></tr></thead>
+    <tbody>
+      <tr><td>用户给了什么</td><td>一个宽泛的领域问题，没有预置材料。</td><td>一个机制问题，加一张模型结构图。</td></tr>
+      <tr><td>系统先做什么</td><td>划定范围，拆出方法、评测、困难与后续方向等研究问题。</td><td>保存附件身份，生成带位置的图像观察，再把机制与风险拆成研究问题。</td></tr>
+      <tr><td>用户最终怎样查看</td><td>阅读总结后，可从回答编号进入来源、原文位置、文章阅读顺序与协作记录。</td><td>先看到 3D 为什么能补足 2D 的机制解释，再查看原图、图像观察、外部论文材料链路和逐句引用绑定。</td></tr>
+      <tr><td>系统如何处理边界</td><td>本地引用绑定完成；外部语义服务超时被保留为未完成的额外检查。</td><td>图像能支持架构说明，但不能替代独立来源、反例和普适效果验证。</td></tr>
+      <tr><td>对后续研究的价值</td><td>把“不要只看干净榜单”转成可执行的鲁棒性、跨域和检索效率实验设计。</td><td>把“3D 可能帮助”转成可检验的融合、受益场景、估计误差和退化策略问题。</td></tr>
+    </tbody>
+  </table>
+  <div class="deck-grid-two" style="flex: 0 0 118px; margin-top: 7px;">
+    <section class="deck-card"><div class="deck-eyebrow">SAME AUDIT SURFACE</div><h2>无论输入是什么，用户都有同一套复核入口</h2><p>结论摘要与完整回答、逐句引用、六角色协作、交接回执、五项交付检查、来源图、文章阅读顺序、证据账本、方法说明和恢复审计保持同样的入口结构。</p></section>
+    <section class="deck-card"><div class="deck-eyebrow">DIFFERENT RESEARCH CONTENT</div><h2>输入变化只影响研究计划和材料类型，不改变核验标准</h2><p>纯文本问题从领域范围开始；带附件问题先增加输入审计和感知观察。两者都必须区分已经能解释的内容、可回查依据和不能被当前材料夸大的边界。</p></section>
+  </div>
+  <div class="deck-note"><strong>共同原则：</strong>每次运行都同时交付结论、依据、执行过程和边界说明。用户看到的不是孤立答案，而是一份可以继续打开材料、检查角色执行和复算指标的研究档案。</div>
+  <div class="slide-number">23</div>
+</div>
+
+<!-- Slide 24: Contribution -->
+<div class="slide research-slide" id="slide-deep-research-contribution">
+  <h1>我在项目中做的工作：把研究型智能体从概念落到可运行、可展示、可复核的系统</h1>
+  <div class="contribution-board">
+    <section class="contribution-stack">
+      <div class="contribution-item"><b>系统设计</b><div><strong>定义可执行的角色、产物与反馈回路</strong><span>把规划、检索、证据整理、完整性检查、写作和引用核验拆成有输入输出的阶段，并定义材料不足时返回检索的路径。</span></div></div>
+      <div class="contribution-item"><b>协议与后端</b><div><strong>实现持久化交接、标准协议边界和恢复审计</strong><span>实现内部 handoff/receipt/artifact 记录、A2A 单 Agent 网关、MCP 工具边界、有限 AG-UI 适配、模型路由、来源档案和 checkpoint 恢复。</span></div></div>
+      <div class="contribution-item"><b>前端体验</b><div><strong>把复杂运行记录翻译成用户能查的界面</strong><span>答案优先；协作总控、来源图、文章顺序、附件审计、量化方法、协议边界与恢复记录按需展开，并支持移动端查验。</span></div></div>
+      <div class="contribution-item"><b>真实验证</b><div><strong>用与自身视觉研究相关的两个案例实际运行</strong><span>一个案例完成 ReID 最新进展调研闭环；一个案例验证图像附件进入研究流程，并交付 3D 如何补强 2D 检索的完整回答。</span></div></div>
+    </section>
+    <section class="contribution-proof">
+      <div><b>交付形态</b><strong>回答可读</strong><span>用户不需要先理解协议、模型或账本，仍能得到直接回答。</span></div>
+      <div><b>查验形态</b><strong>过程可追</strong><span>从回答句可走到原文、附件、来源和角色交接。</span></div>
+      <div><b>工程形态</b><strong>状态可恢复</strong><span>中断、失败与恢复被记录为可核查事件，而不是静态提示。</span></div>
+      <div><b>表达原则</b><strong>边界可见</strong><span>已核对、仍需人工复查和未来候选能力明确区分，不用术语掩盖限制。</span></div>
+    </section>
+  </div>
+  <div class="highlight" style="margin-top: 14px; font-size: 0.94rem; line-height: 1.55;"><strong>项目交付的内容：用户可以据此判断、追问并继续研究。</strong> 系统同时保存结论、原文依据、实际执行、协议边界和未查清的问题。</div>
+  <div class="slide-number">24</div>
+</div>
+
+<!-- Slide 25: Thank You -->
+<div class="slide title-slide">
+  <h1 style="font-size: 3rem; border: none; margin-bottom: 40px;">谢谢聆听</h1>
+  <div style="font-size: 1.2rem; line-height: 2;">
+    <strong>苏渤涵 · Bohan Su</strong><br>
+    武汉大学 软件工程<br>
+    Wuhan University, Software Engineering<br><br>
+    <span style="font-size: 1rem; color: #666;">
+    Email: 2023302143001@whu.edu.cn<br>
+    GitHub: github.com/BohanSu<br>
+    Homepage: bohansu.github.io
+    </span>
+  </div>
+  <div class="slide-number">25</div>
+</div>
+
+</body>
+</html>

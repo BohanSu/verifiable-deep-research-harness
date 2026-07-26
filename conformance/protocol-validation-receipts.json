@@ -1,0 +1,33 @@
+{
+  "schema_version": "protocol-validation-receipt-v1",
+  "generated_at": "2026-07-20",
+  "receipts": {
+    "A2A": {
+      "sdk_version": "1.1.1",
+      "protocol_version": "1.0",
+      "passed": true,
+      "command": "PYTHONPATH=src python -m unittest tests.test_protocols.A2AGatewayTest -v",
+      "checked_at": "2026-07-20",
+      "evidence_path": "protocol-validation-evidence-20260720.txt",
+      "evidence_sha256": "fb748cded530b439efe4411604c395ff6beab0b14fbfdb391bcaf57dc91443d1"
+    },
+    "MCP": {
+      "sdk_version": "1.28.1",
+      "protocol_version": "2025-11-25",
+      "passed": true,
+      "command": "PYTHONPATH=src python -m unittest tests.test_protocols.McpServerTest -v",
+      "checked_at": "2026-07-20",
+      "evidence_path": "protocol-validation-evidence-20260720.txt",
+      "evidence_sha256": "fb748cded530b439efe4411604c395ff6beab0b14fbfdb391bcaf57dc91443d1"
+    },
+    "AG-UI": {
+      "sdk_version": "0.1.19",
+      "typescript_version": "0.0.57",
+      "passed": true,
+      "command": "npm test --prefix conformance/agui -- http://127.0.0.1:8772",
+      "checked_at": "2026-07-20",
+      "evidence_path": "protocol-validation-evidence-20260720.txt",
+      "evidence_sha256": "fb748cded530b439efe4411604c395ff6beab0b14fbfdb391bcaf57dc91443d1"
+    }
+  }
+}

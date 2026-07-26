@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install package and protocol adapters
+        run: python -m pip install -e '.[mcp,a2a]'
+      - name: Check dependency consistency
+        run: python -m pip check
+      - name: Run Python test suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -W always::ResourceWarning -m unittest discover -s tests -v 2>&1 \
+            | tee /tmp/deep-research-python-tests.log
+          if grep -Fq "ResourceWarning: unclosed database" /tmp/deep-research-python-tests.log; then
+            echo "SQLite connection leak detected in the test log" >&2
+            exit 1
+          fi
+        env:
+          PYTHONPATH: src
+
+  agui-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: conformance/agui/package-lock.json
+      - name: Install Python runtime
+        run: python -m pip install -e .
+      - name: Install pinned AG-UI clients
+        run: npm ci --prefix conformance/agui
+      - name: Validate the live offline AG-UI boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src python -m deep_research.cli serve --host 127.0.0.1 --port 8000 > /tmp/deep-research-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8000/api/system-contract > /dev/null; then
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              cat /tmp/deep-research-server.log
+              exit 1
+            fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:8000/api/system-contract > /dev/null
+          npm test --prefix conformance/agui -- http://127.0.0.1:8000
+        env:
+          DR_MODEL_PROVIDER: mock
+          DR_SEARCH_PROVIDER: replay
+          DR_RUNS_DIR: ${{ runner.temp }}/agui-runs
+          DR_CACHE_DIR: ${{ runner.temp }}/agui-cache
+          DR_MAX_ITERATIONS: 3
+          DR_MAX_SEARCH_CALLS: 8
+          DR_MAX_PAGES: 12
+          DR_MAX_TOTAL_ITERATIONS: 9
+          DR_MAX_TOTAL_SEARCH_CALLS: 24
+          DR_MAX_TOTAL_PAGES: 36
+          DR_MANUAL_RESUME_RESERVE_ITERATIONS: 1
+          DR_MANUAL_RESUME_RESERVE_SEARCH_CALLS: 2
+          DR_MANUAL_RESUME_RESERVE_PAGES: 3
